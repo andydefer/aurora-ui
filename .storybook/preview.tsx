@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react';
+import { ThemeProvider } from '../src/components/ThemeProvider';
+import React from 'react';
 
 const preview: Preview = {
     parameters: {
@@ -9,7 +11,17 @@ const preview: Preview = {
                 date: /Date$/,
             },
         },
+        backgrounds: {
+            disable: true,
+        },
     },
+    decorators: [
+        (Story) => (
+            <ThemeProvider showToggle={true} togglePosition="top-right">
+                <Story />
+            </ThemeProvider>
+        ),
+    ],
 };
 
 export default preview;
