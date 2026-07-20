@@ -17,6 +17,8 @@ export type FontWeight = 'normal' | 'medium' | 'semibold' | 'bold';
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | 'full';
 export type Background = 'transparent' | 'primary' | 'secondary' | 'muted' | 'card';
 export type Placement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+export type Shape = 'circle' | 'square' | 'rounded';
+
 
 export interface LayoutBaseProps extends BaseProps {
     className?: string;

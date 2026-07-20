@@ -1,4 +1,14 @@
 export { Heading } from './Heading';
 export type { HeadingProps } from './Heading';
+export { Paragraph } from './Paragraph';
+export type { ParagraphProps } from './Paragraph';
 export { Text } from './Text';
 export type { TextProps } from './Text';
+export { Kbd } from './Kbd';
+export type { KbdProps } from './Kbd';
+export { Code } from './Code';
+export type { CodeProps } from './Code';
+export { Blockquote } from './Blockquote';
+export type { BlockquoteProps } from './Blockquote';
+export { Address } from './Address';
+export type { AddressProps } from './Address';

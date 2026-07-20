@@ -54,12 +54,16 @@ export function Image({
         none: 'object-none',
     };
 
-    const radiusClasses = {
+    const radiusClasses: Record<Radius, string> = {
         none: 'rounded-none',
+        xs: 'rounded-xs',
         sm: 'rounded-sm',
         md: 'rounded-md',
         lg: 'rounded-lg',
         xl: 'rounded-xl',
+        '2xl': 'rounded-2xl',
+        '3xl': 'rounded-3xl',
+        '4xl': 'rounded-4xl',
         full: 'rounded-full',
     };
 
@@ -70,7 +74,6 @@ export function Image({
         auto: '',
     };
 
-    // Spacing → pixels réels (multiplication par 16)
     const spacingToPixels = (value: Spacing | string): string => {
         if (typeof value === 'number') {
             return `${value * 32}px`;
