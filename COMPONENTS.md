@@ -93,13 +93,10 @@
 | 57 | `Pagination` | Pagination | `Pagination({ current?, total?, onChange?, siblings?, boundaries?, className?, style? })` |
 | 58 | `Image` | Image optimisée | `Image({ src?, alt?, width?, height?, lazy?, fallback?, objectFit?, placeholder?, className?, style? })` |
 | 59 | `Avatar` | Avatar utilisateur | `Avatar({ src?, name?, size?, shape?, fallback?, status?, className?, style? })` |
-| 60 | `Picture` | Images responsives | `Picture({ sources?, fallback?, mediaQueries?, className?, style? })` |
 | 61 | `Figure` | Figure avec légende | `Figure({ caption?, align?, zoomable?, className?, style?, children? })` |
 | 62 | `Video` | Lecteur vidéo | `Video({ src?, controls?, autoplay?, loop?, muted?, poster?, thumbnail?, className?, style? })` |
 | 63 | `Audio` | Lecteur audio | `Audio({ src?, controls?, autoplay?, loop?, muted?, className?, style? })` |
 | 64 | `Icon` | Icône SVG | `Icon({ name?, size?, color?, stroke?, fill?, rotate?, className?, style? })` |
-| 65 | `IconButton` | Bouton avec icône | `IconButton({ icon?, label?, variant?, size?, loading?, className?, style?, onClick? })` |
-| 66 | `LazyImage` | Image avec lazy loading et effet | `LazyImage({ src?, alt?, threshold?, placeholder?, effect?, className?, style? })` |
 
 ---
 

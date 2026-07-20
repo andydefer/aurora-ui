@@ -24,12 +24,12 @@
         "LICENSE"
     ],
     "scripts": {
-        "build": "tsup src/index.ts --format esm,cjs --dts --clean --external react",
-        "build:css": "tailwindcss -i src/styles.css -o dist/styles.css",
-        "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+        "build": "npm run build:css && tsup src/index.ts --format esm,cjs --dts --clean --external react && cp src/css/styles.css dist/styles.css",
+        "build:css": "tailwindcss -i src/css/styles.css -o dist/styles.css",
+        "dev": "vite --open /examples/",
         "lint": "eslint src --ext .ts,.tsx",
         "test": "vitest",
-        "prepublishOnly": "npm run build && npm run build:css",
+        "prepublishOnly": "npm run build",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
@@ -43,6 +43,7 @@
         "@storybook/addon-docs": "^10.5.2",
         "@storybook/addon-onboarding": "^10.5.2",
         "@storybook/react-vite": "^10.5.2",
+        "@types/node": "^26.1.1",
         "@types/react": "^18.2.0",
         "@types/react-dom": "^18.2.0",
         "@typescript-eslint/eslint-plugin": "^6.0.0",

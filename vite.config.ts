@@ -7,16 +7,12 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
+            'aurora-ui': path.resolve(__dirname, './src/index.ts'),
         },
     },
-    test: {
-        globals: true,
-        environment: 'jsdom',
-        setupFiles: './src/test/setup.ts',
-        coverage: {
-            provider: 'v8',
-            reporter: ['text', 'json', 'html'],
-        },
+    server: {
+        port: 5173,
+        open: '/examples/audio.html',
     },
     build: {
         lib: {
