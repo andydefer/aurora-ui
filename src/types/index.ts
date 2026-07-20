@@ -24,3 +24,4 @@ export interface StylableProps extends BaseProps {
 
 export type ColorVariant = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+

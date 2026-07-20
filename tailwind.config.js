@@ -3,10 +3,59 @@ module.exports = {
     content: [
         "./src/**/*.{js,jsx,ts,tsx}",
         "./dist/**/*.{js,mjs}",
+        "./.storybook/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {
             colors: {
+                primary: {
+                    DEFAULT: 'hsl(var(--primary))',
+                    foreground: 'hsl(var(--primary-foreground))',
+                    light: 'hsl(var(--primary-light))',
+                    dark: 'hsl(var(--primary-dark))',
+                },
+                secondary: {
+                    DEFAULT: 'hsl(var(--secondary))',
+                    foreground: 'hsl(var(--secondary-foreground))',
+                    light: 'hsl(var(--secondary-light))',
+                },
+                accent: {
+                    DEFAULT: 'hsl(var(--accent))',
+                    foreground: 'hsl(var(--accent-foreground))',
+                },
+                destructive: {
+                    DEFAULT: 'hsl(var(--destructive))',
+                    foreground: 'hsl(var(--destructive-foreground))',
+                },
+                success: {
+                    DEFAULT: 'hsl(var(--success))',
+                    foreground: 'hsl(var(--success-foreground))',
+                },
+                warning: {
+                    DEFAULT: 'hsl(var(--warning))',
+                    foreground: 'hsl(var(--warning-foreground))',
+                },
+                muted: {
+                    DEFAULT: 'hsl(var(--muted))',
+                    foreground: 'hsl(var(--muted-foreground))',
+                },
+                background: 'hsl(var(--background))',
+                foreground: 'hsl(var(--foreground))',
+                card: {
+                    DEFAULT: 'hsl(var(--card))',
+                    foreground: 'hsl(var(--card-foreground))',
+                },
+                popover: {
+                    DEFAULT: 'hsl(var(--popover))',
+                    foreground: 'hsl(var(--popover-foreground))',
+                },
+                border: 'hsl(var(--border))',
+                input: 'hsl(var(--input))',
+                ring: 'hsl(var(--ring))',
+                sidebar: {
+                    DEFAULT: 'hsl(var(--sidebar))',
+                    foreground: 'hsl(var(--sidebar-foreground))',
+                },
                 'aurora-primary': {
                     50: '#eff6ff',
                     100: '#dbeafe',
@@ -22,7 +71,15 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+                serif: ['var(--font-serif)', 'Georgia', 'serif'],
+                mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+            },
+            borderRadius: {
+                DEFAULT: 'var(--radius)',
+                sm: 'var(--radius-sm)',
+                lg: 'var(--radius-lg)',
+                xl: 'var(--radius-xl)',
             },
             animation: {
                 'spin-slow': 'spin 3s linear infinite',

@@ -34,3 +34,6 @@ temp/
 *.tmpdist/
 examples/
 docs/diffs/
+
+*storybook.log
+storybook-static
