@@ -1,0 +1,73 @@
+import React from 'react';
+import { clsx } from '../../utils/clsx';
+import { LayoutBaseProps, TextAlign, TextColor, FontWeight } from '../../types';
+
+export interface HeadingProps extends LayoutBaseProps {
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
+    color?: TextColor;
+    align?: TextAlign;
+    truncate?: boolean;
+    weight?: FontWeight;
+}
+
+export function Heading({
+    children,
+    level = 1,
+    color = 'primary',
+    align = 'left',
+    truncate = false,
+    weight = 'bold',
+    className = '',
+    style = {},
+}: React.PropsWithChildren<HeadingProps>) {
+    const sizeClasses = {
+        1: 'text-4xl',
+        2: 'text-3xl',
+        3: 'text-2xl',
+        4: 'text-xl',
+        5: 'text-lg',
+        6: 'text-base',
+    };
+
+    const colorClasses = {
+        primary: 'text-primary',
+        secondary: 'text-secondary',
+        muted: 'text-muted',
+        danger: 'text-danger',
+        success: 'text-success',
+        warning: 'text-warning',
+    };
+
+    const alignClasses = {
+        left: 'text-left',
+        center: 'text-center',
+        right: 'text-right',
+        justify: 'text-justify',
+    };
+
+    const weightClasses = {
+        normal: 'font-normal',
+        medium: 'font-medium',
+        semibold: 'font-semibold',
+        bold: 'font-bold',
+    };
+
+    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+
+    const classes = clsx(
+        sizeClasses[level],
+        colorClasses[color],
+        alignClasses[align],
+        weightClasses[weight],
+        truncate && 'truncate',
+        className
+    );
+
+    return React.createElement(
+        Tag,
+        { className: classes, style },
+        children
+    );
+}
+
+export default Heading;

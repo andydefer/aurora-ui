@@ -1,3 +1,5 @@
+export * from './layout';
+
 export interface BaseProps {
     id?: string;
     className?: string;
@@ -22,6 +24,3 @@ export interface StylableProps extends BaseProps {
 
 export type ColorVariant = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type Orientation = 'horizontal' | 'vertical';
-export type Alignment = 'start' | 'center' | 'end' | 'stretch';
-export type Justification = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
