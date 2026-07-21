@@ -64,15 +64,15 @@ const itemsWithContent = [
                 <Text variant="h5" className="font-bold">Page d'accueil</Text>
                 <Text>Bienvenue sur votre tableau de bord. Voici un résumé de vos activités récentes.</Text>
                 <div className="grid grid-cols-3 gap-3">
-                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 text-center">
+                    <div className="p-3 bg-primary/5 rounded-md border border-primary/10 text-center">
                         <Text variant="h4" className="font-bold text-primary">12</Text>
                         <Text variant="small" color="muted">Projets</Text>
                     </div>
-                    <div className="p-3 bg-success/5 rounded-lg border border-success/10 text-center">
+                    <div className="p-3 bg-success/5 rounded-md border border-success/10 text-center">
                         <Text variant="h4" className="font-bold text-success">48</Text>
                         <Text variant="small" color="muted">Tâches</Text>
                     </div>
-                    <div className="p-3 bg-warning/5 rounded-lg border border-warning/10 text-center">
+                    <div className="p-3 bg-warning/5 rounded-md border border-warning/10 text-center">
                         <Text variant="h4" className="font-bold text-warning">6</Text>
                         <Text variant="small" color="muted">En attente</Text>
                     </div>
@@ -87,7 +87,7 @@ const itemsWithContent = [
         content: (
             <div className="space-y-3">
                 <Text variant="h5" className="font-bold">Mon profil</Text>
-                <div className="p-4 bg-muted/10 rounded-lg border border-border">
+                <div className="p-4 bg-muted/10 rounded-md border border-border">
                     <div className="flex items-center gap-4">
                         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">
                             JD
@@ -114,7 +114,7 @@ const itemsWithContent = [
             <div className="space-y-3">
                 <Text variant="h5" className="font-bold">Paramètres</Text>
                 <div className="space-y-2">
-                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border">
+                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-md border border-border">
                         <div>
                             <Text className="font-medium">Notifications</Text>
                             <Text variant="small" color="muted">Recevoir des notifications par email</Text>
@@ -123,7 +123,7 @@ const itemsWithContent = [
                             <div className="w-5 h-5 rounded-full bg-white shadow-sm translate-x-4 transition-transform" />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border">
+                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-md border border-border">
                         <div>
                             <Text className="font-medium">Mode sombre</Text>
                             <Text variant="small" color="muted">Activer le thème sombre</Text>
@@ -132,7 +132,7 @@ const itemsWithContent = [
                             <div className="w-5 h-5 rounded-full bg-white shadow-sm transition-transform" />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border">
+                    <div className="flex items-center justify-between p-3 bg-muted/10 rounded-md border border-border">
                         <div>
                             <Text className="font-medium">Langue</Text>
                             <Text variant="small" color="muted">Français</Text>
@@ -152,7 +152,7 @@ const itemsWithContent = [
             <div className="space-y-3">
                 <Text variant="h5" className="font-bold">Notifications</Text>
                 <div className="space-y-2">
-                    <div className="flex items-center gap-3 p-3 bg-muted/10 rounded-lg border border-border">
+                    <div className="flex items-center gap-3 p-3 bg-muted/10 rounded-md border border-border">
                         <Badge dot variant="success" />
                         <div className="flex-1">
                             <Text className="font-medium">Nouveau message</Text>
@@ -160,7 +160,7 @@ const itemsWithContent = [
                         </div>
                         <Text variant="small" color="muted">Non lu</Text>
                     </div>
-                    <div className="flex items-center gap-3 p-3 bg-muted/10 rounded-lg border border-border">
+                    <div className="flex items-center gap-3 p-3 bg-muted/10 rounded-md border border-border">
                         <Badge dot variant="warning" />
                         <div className="flex-1">
                             <Text className="font-medium">Mise à jour disponible</Text>
@@ -168,7 +168,7 @@ const itemsWithContent = [
                         </div>
                         <Text variant="small" color="muted">Non lu</Text>
                     </div>
-                    <div className="flex items-center gap-3 p-3 bg-muted/5 rounded-lg border border-border/50">
+                    <div className="flex items-center gap-3 p-3 bg-muted/5 rounded-md border border-border/50">
                         <Badge dot variant="muted" />
                         <div className="flex-1">
                             <Text className="font-medium">Rapport généré</Text>

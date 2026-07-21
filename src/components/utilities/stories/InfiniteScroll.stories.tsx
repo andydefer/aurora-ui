@@ -237,7 +237,7 @@ const InfiniteScrollDemo = ({
                 hideScrollbar={hideScrollbar}
                 showScrollbar={showScrollbar}
                 autoHideScrollbar={autoHideScrollbar}
-                className={`max-h-[500px] min-w-md border border-border rounded-lg bg-muted/5 p-3 ${isVertical ? '' : 'overflow-x-auto'}`}
+                className={`max-h-[500px] min-w-md border border-border rounded-md bg-muted/5 p-3 ${isVertical ? '' : 'overflow-x-auto'}`}
             >
                 {isVertical ? (
                     <div className="space-y-3">
@@ -301,7 +301,7 @@ const InfiniteScrollDemo = ({
                                             </div>
                                         </div>
 
-                                        <div className="mt-3 p-2 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-between">
+                                        <div className="mt-3 p-2 rounded-md bg-primary/5 border border-primary/10 flex items-center justify-between">
                                             <div className="flex items-center gap-2">
                                                 <Calendar size={14} className="text-primary" />
                                                 <div>
@@ -510,7 +510,7 @@ export const WithCustomLoader: Story = {
                             <span className="text-sm text-muted-foreground">Recherche de médecins...</span>
                         </div>
                     }
-                    className="max-h-[500px] border border-border rounded-lg bg-muted/5 p-3"
+                    className="max-h-[500px] border border-border rounded-md bg-muted/5 p-3"
                 >
                     <div className="space-y-3">
                         {items.map((item) => (

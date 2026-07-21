@@ -283,7 +283,7 @@ export const EducationCard: Story = {
                                     Diplômé avec mention
                                 </Badge>
                             </div>
-                            <div className="mt-3 p-3 bg-muted/10 rounded-lg">
+                            <div className="mt-3 p-3 bg-muted/10 rounded-md">
                                 <Text variant="small">
                                     Spécialisation en Intelligence Artificielle et Data Science
                                 </Text>
@@ -395,11 +395,11 @@ export const SocialContactCard: Story = {
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-muted/10">
+                        <div className="flex items-center gap-2 p-2 rounded-md bg-muted/10">
                             <Mail size={16} className="text-muted-foreground" />
                             <Text variant="small">thomas@email.com</Text>
                         </div>
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-muted/10">
+                        <div className="flex items-center gap-2 p-2 rounded-md bg-muted/10">
                             <Phone size={16} className="text-muted-foreground" />
                             <Text variant="small">+33 6 12 34 56 78</Text>
                         </div>
@@ -503,7 +503,7 @@ export const DoctorCard: Story = {
                     </div>
                 </div>
 
-                <div className="mt-4 p-4 rounded-lg bg-primary/5 border border-primary/10">
+                <div className="mt-4 p-4 rounded-md bg-primary/5 border border-primary/10">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <Calendar size={18} className="text-primary" />
@@ -849,7 +849,7 @@ export const EventCard: Story = {
             >
                 <div className="flex items-start gap-4 p-2">
                     <div className="flex-shrink-0 text-center">
-                        <div className="w-16 h-16 rounded-lg bg-primary/10 flex flex-col items-center justify-center">
+                        <div className="w-16 h-16 rounded-md bg-primary/10 flex flex-col items-center justify-center">
                             <span className="text-2xl font-bold text-primary">15</span>
                             <span className="text-xs text-primary font-medium">Juil</span>
                         </div>
@@ -891,7 +891,7 @@ export const InteractivePlayground: Story = {
             <div className="space-y-4 p-2">
                 <Text variant="h4">Playground</Text>
                 <Text color="muted" className="text-base">Testez les options dans le panneau de contrôle.</Text>
-                <div className="mt-3 p-4 bg-muted/10 rounded-lg">
+                <div className="mt-3 p-4 bg-muted/10 rounded-md">
                     <Text variant="body" className="font-mono">
                         Variant: default • Size: md • Radius: lg
                     </Text>

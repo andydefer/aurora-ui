@@ -1,33 +1,38 @@
-import { ChangeEvent } from 'react';
+// src/components/forms/Checkbox.tsx
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 import { clsx } from '../../utils/clsx';
-import { LayoutBaseProps, Size } from '../../types';
-import { Check } from 'lucide-react';
+import { LayoutBaseProps, Size, TextColor } from '../../types';
+import { Check, Minus } from 'lucide-react';
 
-export interface CheckboxProps extends LayoutBaseProps {
-    checked?: boolean;
-    onChange?: (checked: boolean) => void;
+export interface CheckboxProps extends Omit<LayoutBaseProps, 'role'>, Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'color'> {
     label?: string;
-    indeterminate?: boolean;
+    description?: string;
+    error?: string;
     size?: Size;
+    color?: TextColor;
+    indeterminate?: boolean;
     disabled?: boolean;
     required?: boolean;
-    name?: string;
-    id?: string;
 }
 
-export function Checkbox({
-    checked = false,
-    onChange,
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
     label,
-    indeterminate = false,
+    description,
+    error,
     size = 'md',
+    color = 'primary',
+    indeterminate = false,
     disabled = false,
     required = false,
-    name,
-    id,
+    checked,
+    onChange,
     className = '',
     style = {},
-}: CheckboxProps) {
+    id,
+    ...props
+}, ref) => {
+    const checkboxId = id || `checkbox-${Math.random().toString(36).substring(2, 9)}`;
+
     const sizeClasses: Record<Size, string> = {
         xs: 'w-3.5 h-3.5',
         sm: 'w-4 h-4',
@@ -38,6 +43,18 @@ export function Checkbox({
         '3xl': 'w-9 h-9',
         '4xl': 'w-10 h-10',
         full: 'w-12 h-12',
+    };
+
+    const iconSizeMap: Record<Size, number> = {
+        xs: 8,
+        sm: 10,
+        md: 12,
+        lg: 14,
+        xl: 16,
+        '2xl': 18,
+        '3xl': 20,
+        '4xl': 22,
+        full: 24,
     };
 
     const labelSizeClasses: Record<Size, string> = {
@@ -52,60 +69,103 @@ export function Checkbox({
         full: 'text-xl',
     };
 
-    const classes = clsx(
-        'appearance-none rounded border transition-all duration-200',
-        'flex items-center justify-center',
-        'cursor-pointer',
-        'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
+    const descriptionSizeClasses: Record<Size, string> = {
+        xs: 'text-[10px]',
+        sm: 'text-xs',
+        md: 'text-xs',
+        lg: 'text-sm',
+        xl: 'text-sm',
+        '2xl': 'text-sm',
+        '3xl': 'text-base',
+        '4xl': 'text-base',
+        full: 'text-base',
+    };
+
+    const checkboxClasses = clsx(
+        'appearance-none rounded border-2 bg-background transition-all duration-200',
+        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background',
         'disabled:opacity-50 disabled:cursor-not-allowed',
-        checked || indeterminate
-            ? 'bg-primary border-primary text-primary-foreground'
-            : 'bg-background border-border',
+        'cursor-pointer',
         sizeClasses[size],
+        error ? 'border-destructive focus:ring-destructive' : 'border-border hover:border-primary',
+        checked && !error && 'border-primary bg-primary',
+        checked && error && 'border-destructive bg-destructive',
         className
     );
 
-    const labelClasses = clsx(
-        'ml-2 select-none',
-        labelSizeClasses[size],
-        disabled ? 'text-muted-foreground' : 'text-foreground',
-        className
-    );
+    const iconSize = iconSizeMap[size];
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (!disabled) {
-            onChange?.(e.target.checked);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!disabled && onChange) {
+            onChange(e);
         }
     };
 
     return (
-        <label className="inline-flex items-center">
-            <div className="relative">
+        <div className="flex items-start gap-3" style={style}>
+            <div className="relative flex items-center justify-center mt-0.5">
                 <input
+                    ref={ref}
+                    id={checkboxId}
                     type="checkbox"
                     checked={checked}
                     onChange={handleChange}
                     disabled={disabled}
                     required={required}
-                    name={name}
-                    id={id}
-                    className="sr-only"
+                    className={checkboxClasses}
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${checkboxId}-error` : undefined}
+                    {...props}
                 />
-                <span className={classes} style={style}>
-                    {indeterminate ? (
-                        <span className="w-1/2 h-0.5 bg-current rounded" />
-                    ) : checked ? (
-                        <Check
-                            size={size === 'xs' || size === 'sm' ? 12 : 16}
-                            strokeWidth={3}
-                            className="text-current"
-                        />
-                    ) : null}
-                </span>
+                {checked && !indeterminate && (
+                    <Check
+                        size={iconSize}
+                        className="absolute inset-0 m-auto text-primary-foreground pointer-events-none"
+                        strokeWidth={3}
+                    />
+                )}
+                {indeterminate && (
+                    <Minus
+                        size={iconSize}
+                        className="absolute inset-0 m-auto text-primary-foreground pointer-events-none"
+                        strokeWidth={3}
+                    />
+                )}
             </div>
-            {label && <span className={labelClasses}>{label}</span>}
-        </label>
-    );
-}
 
+            <div className="flex-1">
+                {label && (
+                    <label
+                        htmlFor={checkboxId}
+                        className={clsx(
+                            'font-medium cursor-pointer transition-colors',
+                            labelSizeClasses[size],
+                            disabled ? 'text-muted-foreground' : 'text-foreground',
+                            error && 'text-destructive'
+                        )}
+                    >
+                        {label}
+                        {required && <span className="ml-1 text-destructive">*</span>}
+                    </label>
+                )}
+                {description && (
+                    <p className={clsx(
+                        'text-muted-foreground',
+                        descriptionSizeClasses[size],
+                        disabled && 'opacity-50'
+                    )}>
+                        {description}
+                    </p>
+                )}
+                {error && (
+                    <p id={`${checkboxId}-error`} className="text-xs text-destructive mt-1">
+                        {error}
+                    </p>
+                )}
+            </div>
+        </div>
+    );
+});
+
+Checkbox.displayName = 'Checkbox';
 export default Checkbox;

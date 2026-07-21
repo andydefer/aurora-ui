@@ -108,7 +108,7 @@ const doctorSlides = [
                                 <span className="text-sm">Paris</span>
                             </div>
                         </div>
-                        <div className="mt-4 p-3 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-between flex-wrap gap-2">
+                        <div className="mt-4 p-3 rounded-md bg-primary/5 border border-primary/10 flex items-center justify-between flex-wrap gap-2">
                             <div className="flex items-center gap-2">
                                 <Calendar size={14} className="text-primary" />
                                 <div>
@@ -166,7 +166,7 @@ const doctorSlides = [
                                 <span className="text-sm">Lyon</span>
                             </div>
                         </div>
-                        <div className="mt-4 p-3 rounded-lg bg-muted/10 border border-border/50 flex items-center justify-between flex-wrap gap-2">
+                        <div className="mt-4 p-3 rounded-md bg-muted/10 border border-border/50 flex items-center justify-between flex-wrap gap-2">
                             <div className="flex items-center gap-2">
                                 <Calendar size={14} className="text-muted-foreground" />
                                 <div>
@@ -223,7 +223,7 @@ const doctorSlides = [
                                 <span className="text-sm">Marseille</span>
                             </div>
                         </div>
-                        <div className="mt-4 p-3 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-between flex-wrap gap-2">
+                        <div className="mt-4 p-3 rounded-md bg-primary/5 border border-primary/10 flex items-center justify-between flex-wrap gap-2">
                             <div className="flex items-center gap-2">
                                 <Calendar size={14} className="text-primary" />
                                 <div>

@@ -98,7 +98,7 @@ export function Dropdown({
             {isOpen && (
                 <div
                     className={clsx(
-                        'absolute z-50 bg-card rounded-lg shadow-lg border border-border overflow-hidden',
+                        'absolute z-50 bg-card rounded-md shadow-lg border border-border overflow-hidden',
                         placementClasses[placement],
                         widthClasses[width],
                         className

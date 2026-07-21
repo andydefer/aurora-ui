@@ -102,7 +102,7 @@ export function Pagination({
 
     const buttonClasses = (isActive: boolean = false) =>
         clsx(
-            'flex items-center justify-center rounded-lg transition-all duration-200',
+            'flex items-center justify-center rounded-md transition-all duration-200',
             'hover:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/20',
             sizeClasses[size],
             isActive

@@ -85,7 +85,7 @@ export function SplitPane({
     const secondChild = childrenArray[1];
 
     const classes = clsx(
-        'flex relative overflow-hidden rounded-lg',
+        'flex relative overflow-hidden rounded-md',
         split === 'vertical' ? 'flex-row' : 'flex-col',
         className
     );

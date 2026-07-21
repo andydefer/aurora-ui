@@ -13,7 +13,7 @@ export function Item({
     style = {},
 }: React.PropsWithChildren<ItemProps>) {
     const classes = clsx(
-        'p-4 rounded-lg text-center text-foreground font-medium min-w-[60px]',
+        'p-4 rounded-md text-center text-foreground font-medium min-w-[60px]',
         color,
         className
     );

@@ -105,7 +105,7 @@ export function Popover({
     };
 
     const classes = clsx(
-        'absolute z-50 p-4 bg-card border border-border rounded-lg shadow-lg min-w-[200px] max-w-sm',
+        'absolute z-50 p-4 bg-card border border-border rounded-md shadow-lg min-w-[200px] max-w-sm',
         'transition-all duration-200',
         positionClasses[position],
         isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none',

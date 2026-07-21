@@ -50,7 +50,7 @@ export const Default: Story = {
     args: {
         padding: 4,
         children: (
-            <div className="bg-primary/10 p-8 rounded-lg text-center">
+            <div className="bg-primary/10 p-8 rounded-md text-center">
                 <p className="text-foreground font-medium">Conteneur par défaut</p>
                 <p className="text-muted-foreground text-sm">max-w-lg avec padding horizontal</p>
             </div>
@@ -63,7 +63,7 @@ export const Fluid: Story = {
         fluid: true,
         padding: 4,
         children: (
-            <div className="bg-primary/10 p-8 rounded-lg text-center">
+            <div className="bg-primary/10 p-8 rounded-md text-center">
                 <p className="text-foreground font-medium">Conteneur fluide</p>
                 <p className="text-muted-foreground text-sm">100% de la largeur disponible</p>
             </div>
@@ -205,7 +205,7 @@ export const HeroContainer: Story = {
                 <p className="text-lg opacity-90 mb-6">
                     Un conteneur plein écran avec du contenu centré
                 </p>
-                <button className="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-white/90 transition-colors">
+                <button className="bg-white text-primary px-6 py-2 rounded-md font-medium hover:bg-white/90 transition-colors">
                     Commencer
                 </button>
             </div>

@@ -116,10 +116,10 @@ export const WithMaxWidth: Story = {
                     Le contenu est limité à une largeur maximale de md.
                 </Text>
                 <Box className="mt-4 grid grid-cols-2 gap-4">
-                    <Box className="bg-primary/10 p-4 rounded-lg text-center">1</Box>
-                    <Box className="bg-primary/10 p-4 rounded-lg text-center">2</Box>
-                    <Box className="bg-primary/10 p-4 rounded-lg text-center">3</Box>
-                    <Box className="bg-primary/10 p-4 rounded-lg text-center">4</Box>
+                    <Box className="bg-primary/10 p-4 rounded-md text-center">1</Box>
+                    <Box className="bg-primary/10 p-4 rounded-md text-center">2</Box>
+                    <Box className="bg-primary/10 p-4 rounded-md text-center">3</Box>
+                    <Box className="bg-primary/10 p-4 rounded-md text-center">4</Box>
                 </Box>
             </Box>
         ),
@@ -174,19 +174,19 @@ export const DashboardLayout: Story = {
             <Box>
                 <Heading level={1} className="mb-6">Dashboard</Heading>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <Box className="bg-card p-4 rounded-lg shadow-sm border border-border text-center">
+                    <Box className="bg-card p-4 rounded-md shadow-sm border border-border text-center">
                         <Text className="text-sm text-muted-foreground">Revenus</Text>
                         <Text className="text-2xl font-bold text-foreground">€12,345</Text>
                     </Box>
-                    <Box className="bg-card p-4 rounded-lg shadow-sm border border-border text-center">
+                    <Box className="bg-card p-4 rounded-md shadow-sm border border-border text-center">
                         <Text className="text-sm text-muted-foreground">Utilisateurs</Text>
                         <Text className="text-2xl font-bold text-foreground">1,234</Text>
                     </Box>
-                    <Box className="bg-card p-4 rounded-lg shadow-sm border border-border text-center">
+                    <Box className="bg-card p-4 rounded-md shadow-sm border border-border text-center">
                         <Text className="text-sm text-muted-foreground">Commandes</Text>
                         <Text className="text-2xl font-bold text-foreground">567</Text>
                     </Box>
-                    <Box className="bg-card p-4 rounded-lg shadow-sm border border-border text-center">
+                    <Box className="bg-card p-4 rounded-md shadow-sm border border-border text-center">
                         <Text className="text-sm text-muted-foreground">Taux conversion</Text>
                         <Text className="text-2xl font-bold text-foreground">12.5%</Text>
                     </Box>

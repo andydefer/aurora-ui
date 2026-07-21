@@ -341,7 +341,7 @@ export const HorizontalProducts: Story = {
                             <img
                                 src={product.image}
                                 alt={product.name}
-                                className="w-full h-[160px] object-cover rounded-lg bg-muted/10"
+                                className="w-full h-[160px] object-cover rounded-md bg-muted/10"
                             />
                             {product.badge && (
                                 <Badge
@@ -419,7 +419,7 @@ export const WithSnap: Story = {
                             <img
                                 src={product.image}
                                 alt={product.name}
-                                className="w-full h-[180px] object-cover rounded-lg bg-muted/10"
+                                className="w-full h-[180px] object-cover rounded-md bg-muted/10"
                             />
                             {product.badge && (
                                 <Badge

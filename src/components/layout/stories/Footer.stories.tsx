@@ -71,13 +71,13 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => (
                     Ceci est un contenu de démonstration. Le footer reste en bas de la page.
                 </p>
                 <div className="flex gap-4 justify-center">
-                    <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <div className="w-20 h-20 bg-primary/10 rounded-md flex items-center justify-center">
                         <span className="text-2xl">📦</span>
                     </div>
-                    <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <div className="w-20 h-20 bg-primary/10 rounded-md flex items-center justify-center">
                         <span className="text-2xl">📊</span>
                     </div>
-                    <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <div className="w-20 h-20 bg-primary/10 rounded-md flex items-center justify-center">
                         <span className="text-2xl">📈</span>
                     </div>
                 </div>
@@ -181,9 +181,9 @@ export const WithNewsletter: Story = {
                         <input
                             type="email"
                             placeholder="Votre email"
-                            className="px-4 py-2 text-sm rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
+                            className="px-4 py-2 text-sm rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
                         />
-                        <button className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                        <button className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
                             S'inscrire
                         </button>
                     </div>

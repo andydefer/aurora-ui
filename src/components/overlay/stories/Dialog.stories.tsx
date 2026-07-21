@@ -307,16 +307,16 @@ export const LargeSize: Story = {
         <DialogWithState {...args}>
             <Text>Ce dialogue est en taille large avec plus de contenu.</Text>
             <div className="mt-4 grid grid-cols-2 gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg text-center text-foreground text-sm">
+                <div className="p-3 bg-primary/10 rounded-md text-center text-foreground text-sm">
                     Card 1
                 </div>
-                <div className="p-3 bg-primary/10 rounded-lg text-center text-foreground text-sm">
+                <div className="p-3 bg-primary/10 rounded-md text-center text-foreground text-sm">
                     Card 2
                 </div>
-                <div className="p-3 bg-primary/10 rounded-lg text-center text-foreground text-sm">
+                <div className="p-3 bg-primary/10 rounded-md text-center text-foreground text-sm">
                     Card 3
                 </div>
-                <div className="p-3 bg-primary/10 rounded-lg text-center text-foreground text-sm">
+                <div className="p-3 bg-primary/10 rounded-md text-center text-foreground text-sm">
                     Card 4
                 </div>
             </div>
@@ -339,7 +339,7 @@ export const Scrollable: Story = {
             <div className="space-y-4">
                 <Text>Contenu scrollable avec beaucoup d&apos;éléments.</Text>
                 {Array.from({ length: 20 }).map((_, i) => (
-                    <div key={i} className="p-3 bg-muted/10 rounded-lg">
+                    <div key={i} className="p-3 bg-muted/10 rounded-md">
                         <Text className="text-sm">Élément {i + 1}</Text>
                     </div>
                 ))}
@@ -433,7 +433,7 @@ export const InteractivePlayground: Story = {
     render: (args) => (
         <DialogWithState {...args}>
             <Text>Testez différentes options dans le panneau de contrôle.</Text>
-            <div className="mt-4 p-4 bg-muted/10 rounded-lg">
+            <div className="mt-4 p-4 bg-muted/10 rounded-md">
                 <Text className="text-sm text-muted-foreground">
                     Type: {args.type} • Size: {args.size}
                     {args.type === 'timeout' && ` • Timeout: ${args.timeout}ms`}

@@ -141,11 +141,11 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             }
 
             const variantClasses = {
-                default: 'p-6 rounded-lg border bg-card',
-                minimal: 'p-4 rounded-lg border-0 bg-transparent',
+                default: 'p-6 rounded-md border bg-card',
+                minimal: 'p-4 rounded-md border-0 bg-transparent',
                 card: 'p-0 bg-transparent shadow-none max-w-lg mx-auto',
                 fullscreen: 'fixed inset-0 z-50 flex items-center justify-center p-6 bg-background/95 backdrop-blur-sm',
-                inline: 'p-4 rounded-lg border bg-card/50',
+                inline: 'p-4 rounded-md border bg-card/50',
             };
 
             const colorClasses: Record<TextColor, string> = {
@@ -208,7 +208,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                     {/* Message d'erreur */}
                     {destructive && (
                         <div className={clsx(
-                            'mt-4 p-4 rounded-lg w-full max-w-md text-left',
+                            'mt-4 p-4 rounded-md w-full max-w-md text-left',
                             'bg-muted/20 border border-border/50',
                             'font-mono text-sm overflow-auto max-h-32',
                             'transition-all duration-300'
@@ -227,7 +227,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                                     <span className="group-open:rotate-180 transition-transform">▼</span>
                                     Voir les détails techniques
                                 </summary>
-                                <div className="mt-2 p-4 rounded-lg bg-muted/10 border border-border/50 overflow-auto max-h-48">
+                                <div className="mt-2 p-4 rounded-md bg-muted/10 border border-border/50 overflow-auto max-h-48">
                                     <pre className="text-xs text-muted-foreground whitespace-pre-wrap">
                                         {errorInfo.componentStack}
                                     </pre>

@@ -37,33 +37,33 @@ type Story = StoryObj<typeof Sidebar>;
 
 const SidebarContent = () => (
     <nav className="flex flex-col gap-1">
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md bg-primary/10 text-primary font-medium">
             <Home size={18} />
             Accueil
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-foreground transition-colors">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-foreground transition-colors">
             <User size={18} />
             Profil
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-foreground transition-colors">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-foreground transition-colors">
             <Mail size={18} />
             Messages
             <span className="ml-auto px-2 py-0.5 text-xs bg-destructive text-primary-foreground rounded-full">3</span>
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-foreground transition-colors">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-foreground transition-colors">
             <Bell size={18} />
             Notifications
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-foreground transition-colors">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-foreground transition-colors">
             <Settings size={18} />
             Paramètres
         </a>
-        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-foreground transition-colors">
+        <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-foreground transition-colors">
             <HelpCircle size={18} />
             Aide
         </a>
         <div className="mt-auto pt-4 border-t border-border">
-            <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted/20 text-destructive transition-colors">
+            <a href="#" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-muted/20 text-destructive transition-colors">
                 <LogOut size={18} />
                 Déconnexion
             </a>
@@ -96,7 +96,7 @@ const PageWithSidebar = ({ children, ...props }: any) => {
                     </p>
                     <button
                         onClick={() => setOpen(!open)}
-                        className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                        className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
                     >
                         {open ? 'Fermer' : 'Ouvrir'} la sidebar
                     </button>

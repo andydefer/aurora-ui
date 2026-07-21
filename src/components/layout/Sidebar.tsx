@@ -112,7 +112,7 @@ export function Sidebar({
                         {onClose && (
                             <button
                                 onClick={onClose}
-                                className="p-2 rounded-lg hover:bg-muted/20 transition-colors text-muted-foreground hover:text-foreground"
+                                className="p-2 rounded-md hover:bg-muted/20 transition-colors text-muted-foreground hover:text-foreground"
                                 aria-label="Close sidebar"
                             >
                                 <X size={20} />

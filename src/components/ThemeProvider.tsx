@@ -80,13 +80,14 @@ export function ThemeProvider({
             <div className="relative">
                 {shouldShowToggle && (
                     <div
-                        className={`fixed ${positionClasses[togglePosition]} z-50 flex items-center gap-3 px-3 py-2 rounded-lg shadow-md border border-border bg-card`}
+                        className={`fixed ${positionClasses[togglePosition]} z-50 flex items-center gap-3 px-3 py-2 rounded-md shadow-md border border-border bg-card`}
                     >
                         {isDark ? (
                             <Moon size={16} className="text-foreground" />
                         ) : (
                             <Sun size={16} className="text-foreground" />
                         )}
+
                         <button
                             onClick={toggleDarkMode}
                             className="relative w-10 h-5 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary"

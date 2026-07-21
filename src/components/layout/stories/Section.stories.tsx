@@ -156,17 +156,17 @@ export const CardGrid: Story = {
         spacing: 6,
         children: (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Box className="bg-card p-6 rounded-lg shadow-sm border border-border text-center">
+                <Box className="bg-card p-6 rounded-md shadow-sm border border-border text-center">
                     <div className="text-3xl mb-2">📦</div>
                     <Text weight="bold" className="text-foreground">Carte 1</Text>
                     <Text variant="small" color="muted" className="text-muted-foreground">Description de la carte 1</Text>
                 </Box>
-                <Box className="bg-card p-6 rounded-lg shadow-sm border border-border text-center">
+                <Box className="bg-card p-6 rounded-md shadow-sm border border-border text-center">
                     <div className="text-3xl mb-2">📊</div>
                     <Text weight="bold" className="text-foreground">Carte 2</Text>
                     <Text variant="small" color="muted" className="text-muted-foreground">Description de la carte 2</Text>
                 </Box>
-                <Box className="bg-card p-6 rounded-lg shadow-sm border border-border text-center">
+                <Box className="bg-card p-6 rounded-md shadow-sm border border-border text-center">
                     <div className="text-3xl mb-2">📈</div>
                     <Text weight="bold" className="text-foreground">Carte 3</Text>
                     <Text variant="small" color="muted" className="text-muted-foreground">Description de la carte 3</Text>
@@ -228,13 +228,13 @@ export const WithSpacing: Story = {
         padding: 8,
         children: (
             <>
-                <Box className="bg-card p-4 rounded-lg text-center">
+                <Box className="bg-card p-4 rounded-md text-center">
                     <Text weight="bold" className="text-foreground">Élément 1</Text>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg text-center">
+                <Box className="bg-card p-4 rounded-md text-center">
                     <Text weight="bold" className="text-foreground">Élément 2</Text>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg text-center">
+                <Box className="bg-card p-4 rounded-md text-center">
                     <Text weight="bold" className="text-foreground">Élément 3</Text>
                 </Box>
             </>
@@ -290,10 +290,10 @@ export const HeroSection: Story = {
                     Une bibliothèque de composants React moderne, accessible et personnalisable.
                 </Text>
                 <Box className="mt-6 flex gap-4 justify-center">
-                    <button className="px-6 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary-foreground/90 transition-colors">
+                    <button className="px-6 py-2 bg-primary/10 text-primary rounded-md font-medium hover:bg-primary-foreground/90 transition-colors">
                         Commencer
                     </button>
-                    <button className="px-6 py-2 bg-primary/90 text-primary-foreground rounded-lg font-medium hover:bg-primary-foreground/30 transition-colors">
+                    <button className="px-6 py-2 bg-primary/90 text-primary-foreground rounded-md font-medium hover:bg-primary-foreground/30 transition-colors">
                         En savoir plus
                     </button>
                 </Box>

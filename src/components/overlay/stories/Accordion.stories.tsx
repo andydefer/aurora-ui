@@ -112,19 +112,19 @@ const defaultItems = [
                     Voici les étapes pour créer votre design system :
                 </Text>
                 <div className="space-y-2">
-                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-lg">
+                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-md">
                         <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-bold">1</span>
                         <span className="text-foreground">Audit de l'existant</span>
                     </div>
-                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-lg">
+                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-md">
                         <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-bold">2</span>
                         <span className="text-foreground">Définir les principes</span>
                     </div>
-                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-lg">
+                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-md">
                         <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-bold">3</span>
                         <span className="text-foreground">Créer les composants</span>
                     </div>
-                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-lg">
+                    <div className="flex items-center gap-2 p-2 bg-muted/10 rounded-md">
                         <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-bold">4</span>
                         <span className="text-foreground">Documenter et itérer</span>
                     </div>

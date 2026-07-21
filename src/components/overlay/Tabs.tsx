@@ -96,7 +96,7 @@ export function Tabs({
         },
         pills: {
             container: 'gap-1',
-            tab: 'rounded-lg hover:bg-muted/20 transition-all duration-200',
+            tab: 'rounded-md hover:bg-muted/20 transition-all duration-200',
             active: 'font-semibold',
             activeColor: `bg-${color} text-${color}-foreground hover:bg-${color}/90`,
         },
@@ -107,7 +107,7 @@ export function Tabs({
             activeColor: colorClasses[color],
         },
         contained: {
-            container: 'bg-muted/20 rounded-lg p-1 gap-0.5',
+            container: 'bg-muted/20 rounded-md p-1 gap-0.5',
             tab: 'rounded-md hover:bg-muted/10 transition-all duration-200',
             active: 'font-semibold shadow-sm',
             activeColor: `bg-${color} text-${color}-foreground hover:bg-${color}/90`,

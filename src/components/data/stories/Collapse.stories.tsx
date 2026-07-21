@@ -137,7 +137,7 @@ export const WithToggle: Story = {
                             <img
                                 src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop"
                                 alt="Produit"
-                                className="w-20 h-20 rounded-lg object-cover"
+                                className="w-20 h-20 rounded-md object-cover"
                             />
                             <div>
                                 <Text variant="h5" className="font-bold">Montre Connectée Pro</Text>
@@ -149,7 +149,7 @@ export const WithToggle: Story = {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-4 p-3 bg-muted/10 rounded-lg">
+                        <div className="grid grid-cols-3 gap-4 p-3 bg-muted/10 rounded-md">
                             <div className="text-center">
                                 <Text variant="h6" className="font-bold text-primary">199,99€</Text>
                                 <Text variant="caption" color="muted">Prix</Text>
@@ -356,7 +356,7 @@ export const FAQCollapse: Story = {
                     <div key={index}>
                         <button
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            className="w-full flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:bg-muted/5 transition-colors"
+                            className="w-full flex items-center justify-between p-4 bg-card border border-border rounded-md hover:bg-muted/5 transition-colors"
                         >
                             <Text className="font-medium">{faq.question}</Text>
                             {openIndex === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}

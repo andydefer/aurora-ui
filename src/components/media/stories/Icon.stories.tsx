@@ -271,7 +271,7 @@ export const CombinedAnimations: Story = {
 
 export const IconWithText: Story = {
     render: () => (
-        <Flex gap={2} align="center" className="p-4 bg-card rounded-lg border border-border">
+        <Flex gap={2} align="center" className="p-4 bg-card rounded-md border border-border">
             <Icon icon={Home} size="md" color="primary" />
             <span className="text-foreground font-medium">Accueil</span>
             <Icon icon={ChevronRight} size="sm" color="muted" />

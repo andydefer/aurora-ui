@@ -149,7 +149,7 @@ export const WithMenuIcon: Story = {
     args: {
         children: (
             <div className="flex items-center gap-4 w-full">
-                <button className="p-2 rounded-lg hover:bg-muted/20 transition-colors text-foreground">
+                <button className="p-2 rounded-md hover:bg-muted/20 transition-colors text-foreground">
                     <Menu size={24} />
                 </button>
                 <span className="text-xl font-bold text-foreground">Logo</span>
@@ -189,7 +189,7 @@ export const WithCustomContent: Story = {
                     <input
                         type="text"
                         placeholder="Rechercher..."
-                        className="w-full px-4 py-2 text-sm rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
+                        className="w-full px-4 py-2 text-sm rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                 </div>
                 <div className="flex items-center gap-2">

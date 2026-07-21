@@ -123,7 +123,7 @@ export const CenteredItems: Story = {
         gap: 4,
         align: 'center',
         justify: 'center',
-        className: 'min-h-[200px] bg-muted/10 rounded-lg p-4',
+        className: 'min-h-[200px] bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>Centré</Item>
@@ -141,42 +141,42 @@ export const Cards: Story = {
         className: 'max-w-4xl',
         children: (
             <>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">📊</span>
                     </div>
                     <h4 className="font-bold text-foreground">Card 1</h4>
                     <p className="text-sm text-muted-foreground">Description de la carte 1</p>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">📈</span>
                     </div>
                     <h4 className="font-bold text-foreground">Card 2</h4>
                     <p className="text-sm text-muted-foreground">Description de la carte 2</p>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">📋</span>
                     </div>
                     <h4 className="font-bold text-foreground">Card 3</h4>
                     <p className="text-sm text-muted-foreground">Description de la carte 3</p>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">📦</span>
                     </div>
                     <h4 className="font-bold text-foreground">Card 4</h4>
                     <p className="text-sm text-muted-foreground">Description de la carte 4</p>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">🎯</span>
                     </div>
                     <h4 className="font-bold text-foreground">Card 5</h4>
                     <p className="text-sm text-muted-foreground">Description de la carte 5</p>
                 </Box>
-                <Box className="bg-card p-4 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow">
+                <Box className="bg-card p-4 rounded-md shadow-sm border border-border hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                         <span className="text-2xl">⭐</span>
                     </div>
@@ -250,7 +250,7 @@ export const AsSection: Story = {
         as: 'section',
         columns: 2,
         gap: 4,
-        className: 'bg-muted/10 rounded-lg p-4',
+        className: 'bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>Section 1</Item>

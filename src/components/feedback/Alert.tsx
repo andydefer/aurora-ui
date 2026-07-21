@@ -72,7 +72,7 @@ export function Alert({
         variantStyle.container,
         withBorder && 'border',
         elevated && 'shadow-md',
-        compact ? 'p-3 rounded-md' : 'p-4 rounded-lg',
+        compact ? 'p-3 rounded-md' : 'p-4 rounded-md',
         !isVisible && 'opacity-0 scale-95 hidden',
         className
     );

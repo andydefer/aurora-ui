@@ -149,7 +149,7 @@ export const InfoTooltips: Story = {
         <div className="space-y-6 max-w-2xl w-full">
             <Text variant="h5" className="font-bold">ℹ️ Informations contextuelles</Text>
             <div className="space-y-4">
-                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-lg border border-border/50">
+                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-md border border-border/50">
                     <Tooltip content="Cette information est importante pour votre compte" position="right" color="primary">
                         <Info size={18} className="text-primary cursor-help" />
                     </Tooltip>
@@ -158,7 +158,7 @@ export const InfoTooltips: Story = {
                         <Text variant="small" color="muted">Votre compte est protégé par une authentification à deux facteurs</Text>
                     </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-lg border border-border/50">
+                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-md border border-border/50">
                     <Tooltip content="Cette action est irréversible" position="right" color="destructive">
                         <AlertCircle size={18} className="text-destructive cursor-help" />
                     </Tooltip>
@@ -167,7 +167,7 @@ export const InfoTooltips: Story = {
                         <Text variant="small" color="muted">La suppression de ce contenu est définitive</Text>
                     </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-lg border border-border/50">
+                <div className="flex items-start gap-3 p-4 bg-muted/5 rounded-md border border-border/50">
                     <Tooltip content="Cette fonctionnalité est disponible pour tous les utilisateurs" position="right" color="success">
                         <CheckCircle2Icon size={18} className="text-success cursor-help" />
                     </Tooltip>

@@ -39,7 +39,7 @@ const DrawerWithState = ({
         <div className="w-full min-h-[500px] flex items-center justify-center">
             <button
                 onClick={() => setOpen(true)}
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                className="px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
             >
                 Ouvrir Drawer
             </button>
@@ -178,7 +178,7 @@ export const WithLongContent: Story = {
                 {Array.from({ length: 20 }).map((_, i) => (
                     <div
                         key={i}
-                        className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/20 transition-colors"
+                        className="flex items-center gap-4 p-3 rounded-md hover:bg-muted/20 transition-colors"
                     >
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
                             {i + 1}
@@ -215,16 +215,16 @@ export const FullSize: Story = {
                     Prend 90% de la largeur ou hauteur de l'écran.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-primary/10 p-4 rounded-lg text-center text-foreground">
+                    <div className="bg-primary/10 p-4 rounded-md text-center text-foreground">
                         Card 1
                     </div>
-                    <div className="bg-primary/10 p-4 rounded-lg text-center text-foreground">
+                    <div className="bg-primary/10 p-4 rounded-md text-center text-foreground">
                         Card 2
                     </div>
-                    <div className="bg-primary/10 p-4 rounded-lg text-center text-foreground">
+                    <div className="bg-primary/10 p-4 rounded-md text-center text-foreground">
                         Card 3
                     </div>
-                    <div className="bg-primary/10 p-4 rounded-lg text-center text-foreground">
+                    <div className="bg-primary/10 p-4 rounded-md text-center text-foreground">
                         Card 4
                     </div>
                 </div>
@@ -252,7 +252,7 @@ export const WithForm: Story = {
                     <input
                         type="text"
                         placeholder="Jean Dupont"
-                        className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+                        className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
                     />
                 </div>
                 <div>
@@ -262,7 +262,7 @@ export const WithForm: Story = {
                     <input
                         type="email"
                         placeholder="jean@email.com"
-                        className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
+                        className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow"
                     />
                 </div>
                 <div>
@@ -272,10 +272,10 @@ export const WithForm: Story = {
                     <textarea
                         rows={3}
                         placeholder="Votre message..."
-                        className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow resize-none"
+                        className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none transition-shadow resize-none"
                     />
                 </div>
-                <button className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                <button className="w-full py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
                     Envoyer
                 </button>
             </div>

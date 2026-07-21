@@ -124,7 +124,7 @@ const ScrollLockDemo = ({
                                         : 'Le défilement est actuellement déverrouillé. Vous pouvez défiler librement.'
                                     }
                                 </Text>
-                                <div className="mt-4 p-3 bg-muted/10 rounded-lg border border-border/50">
+                                <div className="mt-4 p-3 bg-muted/10 rounded-md border border-border/50">
                                     <div className="flex items-center gap-2">
                                         <div className={clsx(
                                             'w-2 h-2 rounded-full transition-all duration-300',
@@ -349,7 +349,7 @@ export const InModal: Story = {
                                         ✕
                                     </Button>
                                 </div>
-                                <div className="mt-4 p-4 bg-muted/10 rounded-lg border border-border/50">
+                                <div className="mt-4 p-4 bg-muted/10 rounded-md border border-border/50">
                                     <Text color="muted" className="text-sm">
                                         Le défilement est verrouillé tant que la modal est ouverte.
                                     </Text>

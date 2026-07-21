@@ -297,7 +297,7 @@ export function Dialog({
                             {showCloseButton && onClose && (
                                 <button
                                     onClick={onClose}
-                                    className="p-1 rounded-lg hover:bg-muted/20 transition-colors text-muted-foreground hover:text-foreground shrink-0"
+                                    className="p-1 rounded-md hover:bg-muted/20 transition-colors text-muted-foreground hover:text-foreground shrink-0"
                                     aria-label="Fermer"
                                 >
                                     <X size={20} />
@@ -325,7 +325,7 @@ export function Dialog({
                             {isConfirm && showReject && (
                                 <button
                                     onClick={handleReject}
-                                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/10 rounded-lg transition-colors"
+                                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/10 rounded-md transition-colors"
                                     disabled={loading}
                                 >
                                     {rejectText}
@@ -334,7 +334,7 @@ export function Dialog({
                             {showCancel && !isConfirm && (
                                 <button
                                     onClick={handleCancel}
-                                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/10 rounded-lg transition-colors"
+                                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/10 rounded-md transition-colors"
                                     disabled={loading}
                                 >
                                     {cancelText}
@@ -344,7 +344,7 @@ export function Dialog({
                                 onClick={handleConfirm}
                                 disabled={loading || (isTimeout && timeLeft <= 0)}
                                 className={clsx(
-                                    'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                                    'px-4 py-2 text-sm font-medium rounded-md transition-all duration-200',
                                     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background',
                                     'disabled:opacity-50 disabled:cursor-not-allowed',
                                     confirmButtonClasses[confirmColor],

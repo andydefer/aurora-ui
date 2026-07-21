@@ -40,7 +40,7 @@ export function Link({
     const variantClasses = {
         default: 'font-medium',
         subtle: 'font-normal text-muted-foreground hover:text-foreground',
-        ghost: 'font-normal hover:bg-muted/20 px-2 py-1 rounded-lg transition-colors',
+        ghost: 'font-normal hover:bg-muted/20 px-2 py-1 rounded-md transition-colors',
     };
 
     const classes = clsx(

@@ -64,7 +64,7 @@ const BuggyComponent = () => {
     }
 
     return (
-        <div className="space-y-4 p-6 bg-card rounded-lg border border-border text-center">
+        <div className="space-y-4 p-6 bg-card rounded-md border border-border text-center">
             <Text variant="h5" className="font-bold">Composant fonctionnel</Text>
             <Text color="muted">Cliquez sur le bouton pour déclencher une erreur.</Text>
             <Button

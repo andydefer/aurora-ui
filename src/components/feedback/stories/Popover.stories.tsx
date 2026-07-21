@@ -115,21 +115,21 @@ export const ContactInfo: Story = {
                 <div className="space-y-3 max-w-xs">
                     <Text variant="h6" className="font-bold">📞 Contact</Text>
                     <div className="space-y-2">
-                        <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/10 transition-colors">
+                        <div className="flex items-center gap-3 p-2 rounded-md hover:bg-muted/10 transition-colors">
                             <Phone size={16} className="text-muted-foreground" />
                             <div>
                                 <Text variant="small" className="font-medium">Téléphone</Text>
                                 <Text variant="caption" color="muted">+33 6 12 34 56 78</Text>
                             </div>
                         </div>
-                        <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/10 transition-colors">
+                        <div className="flex items-center gap-3 p-2 rounded-md hover:bg-muted/10 transition-colors">
                             <MailIcon size={16} className="text-muted-foreground" />
                             <div>
                                 <Text variant="small" className="font-medium">Email</Text>
                                 <Text variant="caption" color="muted">contact@entreprise.com</Text>
                             </div>
                         </div>
-                        <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/10 transition-colors">
+                        <div className="flex items-center gap-3 p-2 rounded-md hover:bg-muted/10 transition-colors">
                             <MapPin size={16} className="text-muted-foreground" />
                             <div>
                                 <Text variant="small" className="font-medium">Adresse</Text>
@@ -165,28 +165,28 @@ export const NotificationCenter: Story = {
                         </Button>
                     </div>
                     <div className="space-y-2 max-h-60 overflow-y-auto">
-                        <div className="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border border-primary/20">
+                        <div className="flex items-start gap-3 p-3 bg-primary/5 rounded-md border border-primary/20">
                             <div className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
                             <div>
                                 <Text variant="small" className="font-medium">Nouveau message</Text>
                                 <Text variant="caption" color="muted">Il y a 5 minutes</Text>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/5 transition-colors">
+                        <div className="flex items-start gap-3 p-3 rounded-md hover:bg-muted/5 transition-colors">
                             <div className="w-2 h-2 rounded-full bg-muted mt-1.5 shrink-0" />
                             <div>
                                 <Text variant="small" className="font-medium">Mise à jour disponible</Text>
                                 <Text variant="caption" color="muted">Il y a 2 heures</Text>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/5 transition-colors">
+                        <div className="flex items-start gap-3 p-3 rounded-md hover:bg-muted/5 transition-colors">
                             <div className="w-2 h-2 rounded-full bg-muted mt-1.5 shrink-0" />
                             <div>
                                 <Text variant="small" className="font-medium">Rapport généré</Text>
                                 <Text variant="caption" color="muted">Hier à 14:30</Text>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/5 transition-colors">
+                        <div className="flex items-start gap-3 p-3 rounded-md hover:bg-muted/5 transition-colors">
                             <div className="w-2 h-2 rounded-full bg-muted mt-1.5 shrink-0" />
                             <div>
                                 <Text variant="small" className="font-medium">Invitation reçue</Text>

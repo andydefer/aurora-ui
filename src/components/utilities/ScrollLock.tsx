@@ -108,7 +108,7 @@ export function ScrollLock({
 
     const classes = clsx(
         'scroll-lock relative',
-        isLocked && 'ring-2 ring-primary/20 rounded-lg',
+        isLocked && 'ring-2 ring-primary/20 rounded-md',
         className
     );
 

@@ -65,7 +65,7 @@ export function Header({
         sticky && 'sticky top-0 z-40',
         fixed && 'fixed top-0 left-0 right-0 z-50',
         borderBottom && 'border-b border-border/50',
-        rounded && 'rounded-lg',
+        rounded && 'rounded-md',
         typeof height === 'number' && `h-${height}`,
         typeof height === 'string' && heightClasses[height as keyof typeof heightClasses],
         padding !== undefined && `px-${padding}`,

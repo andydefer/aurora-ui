@@ -39,7 +39,7 @@ export function Box({
         radius === 'none' && 'rounded-none',
         radius === 'sm' && 'rounded-sm',
         radius === 'md' && 'rounded-md',
-        radius === 'lg' && 'rounded-lg',
+        radius === 'lg' && 'rounded-md',
         radius === 'xl' && 'rounded-xl',
         radius === 'full' && 'rounded-full',
         shadow === 'sm' && 'shadow-sm',

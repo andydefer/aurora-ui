@@ -69,7 +69,7 @@ export const Default: Story = {
     render: (args) => (
         <ModalWithState {...args}>
             <Text>Ceci est une modal standard avec du contenu simple.</Text>
-            <div className="mt-4 p-4 bg-muted/10 rounded-lg">
+            <div className="mt-4 p-4 bg-muted/10 rounded-md">
                 <Text className="text-sm text-muted-foreground">
                     Vous pouvez y mettre n&apos;importe quel contenu.
                 </Text>
@@ -144,7 +144,7 @@ export const Scrollable: Story = {
             <div className="space-y-4">
                 <Text>Contenu scrollable avec beaucoup d&apos;éléments.</Text>
                 {Array.from({ length: 20 }).map((_, i) => (
-                    <div key={i} className="p-3 bg-muted/10 rounded-lg">
+                    <div key={i} className="p-3 bg-muted/10 rounded-md">
                         <Text className="text-sm">Élément {i + 1}</Text>
                     </div>
                 ))}
@@ -167,16 +167,16 @@ export const Large: Story = {
         <ModalWithState {...args}>
             <Text>Modal en grande taille avec plus de contenu.</Text>
             <div className="mt-4 grid grid-cols-2 gap-4">
-                <div className="p-4 bg-primary/10 rounded-lg text-center text-foreground">
+                <div className="p-4 bg-primary/10 rounded-md text-center text-foreground">
                     Card 1
                 </div>
-                <div className="p-4 bg-primary/10 rounded-lg text-center text-foreground">
+                <div className="p-4 bg-primary/10 rounded-md text-center text-foreground">
                     Card 2
                 </div>
-                <div className="p-4 bg-primary/10 rounded-lg text-center text-foreground">
+                <div className="p-4 bg-primary/10 rounded-md text-center text-foreground">
                     Card 3
                 </div>
-                <div className="p-4 bg-primary/10 rounded-lg text-center text-foreground">
+                <div className="p-4 bg-primary/10 rounded-md text-center text-foreground">
                     Card 4
                 </div>
             </div>
@@ -198,7 +198,7 @@ export const Full: Story = {
             <Text>Modal en pleine largeur.</Text>
             <div className="mt-4 grid grid-cols-3 gap-4">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="p-4 bg-primary/10 rounded-lg text-center text-foreground">
+                    <div key={i} className="p-4 bg-primary/10 rounded-md text-center text-foreground">
                         Card {i}
                     </div>
                 ))}
@@ -219,7 +219,7 @@ export const WithoutCloseButton: Story = {
     render: (args) => (
         <ModalWithState {...args}>
             <Text>Cette modal n&apos;a pas de bouton de fermeture.</Text>
-            <div className="mt-4 p-4 bg-muted/10 rounded-lg">
+            <div className="mt-4 p-4 bg-muted/10 rounded-md">
                 <Text className="text-sm text-muted-foreground">
                     Utilisez le footer pour fermer ou le fond.
                 </Text>
@@ -243,7 +243,7 @@ export const NoBackdropClose: Story = {
     render: (args) => (
         <ModalWithState {...args}>
             <Text>Cette modal ne se ferme pas en cliquant sur le fond.</Text>
-            <div className="mt-4 p-4 bg-muted/10 rounded-lg">
+            <div className="mt-4 p-4 bg-muted/10 rounded-md">
                 <Text className="text-sm text-muted-foreground">
                     Utilisez le bouton de fermeture ou le footer.
                 </Text>
@@ -275,11 +275,11 @@ export const RichContent: Story = {
                     <Badge variant="destructive">Beta</Badge>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 text-center">
+                    <div className="p-3 bg-primary/5 rounded-md border border-primary/10 text-center">
                         <Text variant="h4" className="font-bold text-primary">85%</Text>
                         <Text variant="small" color="muted">Satisfaction</Text>
                     </div>
-                    <div className="p-3 bg-success/5 rounded-lg border border-success/10 text-center">
+                    <div className="p-3 bg-success/5 rounded-md border border-success/10 text-center">
                         <Text variant="h4" className="font-bold text-success">1.2k</Text>
                         <Text variant="small" color="muted">Utilisateurs</Text>
                     </div>
@@ -330,7 +330,7 @@ export const AllSizes: Story = {
                         closeOnBackdrop
                     >
                         <Text>Cette modal est en taille <strong>{size}</strong>.</Text>
-                        <div className="mt-4 p-3 bg-muted/10 rounded-lg">
+                        <div className="mt-4 p-3 bg-muted/10 rounded-md">
                             <Text variant="small" color="muted">
                                 Contenu de la modal en taille {size}.
                             </Text>
@@ -355,7 +355,7 @@ export const InteractivePlayground: Story = {
     render: (args) => (
         <ModalWithState {...args}>
             <Text>Testez les options dans le panneau de contrôle.</Text>
-            <div className="mt-4 p-3 bg-muted/10 rounded-lg">
+            <div className="mt-4 p-3 bg-muted/10 rounded-md">
                 <Text variant="small" className="font-mono">
                     Size: {args.size} • Scrollable: {String(args.scrollable)}
                 </Text>

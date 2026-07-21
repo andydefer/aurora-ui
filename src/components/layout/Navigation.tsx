@@ -77,19 +77,19 @@ export function Navigation({
     );
 
     const mobileClasses = clsx(
-        'flex-col items-start gap-2 p-4 bg-card rounded-lg shadow-lg border border-border absolute top-full left-0 right-0 z-50',
+        'flex-col items-start gap-2 p-4 bg-card rounded-md shadow-lg border border-border absolute top-full left-0 right-0 z-50',
         'transition-all duration-300 ease-in-out',
         isMobileOpen ? 'opacity-100 translate-y-2 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
     );
 
     const itemClasses = clsx(
-        'px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/10',
+        'px-3 py-2 rounded-md transition-all duration-200 text-foreground hover:text-primary hover:bg-primary/10',
         highlight && 'hover:scale-105',
         'w-full sm:w-auto'
     );
 
     const activeItemClasses = clsx(
-        'px-3 py-2 rounded-lg transition-all duration-200',
+        'px-3 py-2 rounded-md transition-all duration-200',
         activeColorClasses[activeColor],
         highlight && 'scale-105',
         'w-full sm:w-auto'
@@ -132,7 +132,7 @@ export function Navigation({
             <button
                 onClick={toggleMobileMenu}
                 className={clsx(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border text-foreground hover:bg-muted/20 transition-colors',
+                    'flex items-center gap-2 px-3 py-2 rounded-md bg-card border border-border text-foreground hover:bg-muted/20 transition-colors',
                     mobileBreakpointClasses[mobileBreakpoint]
                 )}
                 aria-label={isMobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}

@@ -49,10 +49,10 @@ export function ScrollList({
     const isVertical = direction === 'vertical';
 
     const variantClasses = {
-        default: 'bg-card border border-border rounded-lg',
+        default: 'bg-card border border-border rounded-md',
         bordered: 'border-2 border-border rounded-xl bg-card shadow-sm',
         elevated: 'bg-card rounded-xl shadow-lg',
-        ghost: 'bg-transparent rounded-lg',
+        ghost: 'bg-transparent rounded-md',
     };
 
     const colorClasses: Record<TextColor, string> = {

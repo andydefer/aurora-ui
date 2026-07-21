@@ -94,7 +94,7 @@ export const Centered: Story = {
         spacing: 4,
         align: 'center',
         justify: 'center',
-        className: 'min-h-[200px] bg-muted/10 rounded-lg p-4',
+        className: 'min-h-[200px] bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>Centré</Item>
@@ -109,7 +109,7 @@ export const SpaceBetween: Story = {
         direction: 'horizontal',
         spacing: 4,
         justify: 'between',
-        className: 'w-full max-w-md bg-muted/10 rounded-lg p-4',
+        className: 'w-full max-w-md bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>Gauche</Item>
@@ -125,7 +125,7 @@ export const Reverse: Story = {
         direction: 'horizontal',
         reverse: true,
         spacing: 4,
-        className: 'bg-muted/10 rounded-lg p-4',
+        className: 'bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>1</Item>
@@ -140,7 +140,7 @@ export const Inline: Story = {
     args: {
         inline: true,
         spacing: 4,
-        className: 'bg-muted/10 rounded-lg p-4',
+        className: 'bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>1</Item>
@@ -189,7 +189,7 @@ export const NestedStacks: Story = {
     args: {
         direction: 'vertical',
         spacing: 4,
-        className: 'bg-muted/10 rounded-lg p-4 max-w-md',
+        className: 'bg-muted/10 rounded-md p-4 max-w-md',
         children: (
             <>
                 <Text variant="h4" className="text-foreground">En-tête</Text>
@@ -212,11 +212,11 @@ export const Grow: Story = {
         direction: 'horizontal',
         spacing: 4,
         grow: true,
-        className: 'w-full max-w-md bg-muted/10 rounded-lg p-4',
+        className: 'w-full max-w-md bg-muted/10 rounded-md p-4',
         children: (
             <>
                 <Item>Fixé</Item>
-                <Box className="flex-grow bg-primary/10 p-4 rounded-lg text-center text-foreground font-medium">
+                <Box className="flex-grow bg-primary/10 p-4 rounded-md text-center text-foreground font-medium">
                     Grow
                 </Box>
                 <Item>Fixé</Item>
@@ -229,7 +229,7 @@ export const FormLayout: Story = {
     args: {
         direction: 'vertical',
         spacing: 6,
-        className: 'w-full max-w-md bg-card p-6 rounded-lg shadow-md border border-border',
+        className: 'w-full max-w-md bg-card p-6 rounded-md shadow-md border border-border',
         children: (
             <>
                 <Stack direction="vertical" spacing={2}>
@@ -237,7 +237,7 @@ export const FormLayout: Story = {
                     <input
                         type="text"
                         placeholder="Jean Dupont"
-                        className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                 </Stack>
                 <Stack direction="vertical" spacing={2}>
@@ -245,14 +245,14 @@ export const FormLayout: Story = {
                     <input
                         type="email"
                         placeholder="jean@email.com"
-                        className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-md border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                 </Stack>
                 <Stack direction="horizontal" spacing={4}>
-                    <button className="flex-1 px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                    <button className="flex-1 px-6 py-2.5 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors">
                         Envoyer
                     </button>
-                    <button className="flex-1 px-6 py-2.5 bg-muted text-foreground rounded-lg font-medium hover:bg-muted/80 transition-colors">
+                    <button className="flex-1 px-6 py-2.5 bg-muted text-foreground rounded-md font-medium hover:bg-muted/80 transition-colors">
                         Annuler
                     </button>
                 </Stack>
@@ -266,16 +266,16 @@ export const ResponsiveStack: Story = {
         direction: 'horizontal',
         spacing: 4,
         wrap: true,
-        className: 'w-full max-w-lg bg-muted/10 rounded-lg p-4',
+        className: 'w-full max-w-lg bg-muted/10 rounded-md p-4',
         children: (
             <>
-                <Box className="flex-1 min-w-[150px] bg-primary/10 p-4 rounded-lg text-center text-foreground font-medium">
+                <Box className="flex-1 min-w-[150px] bg-primary/10 p-4 rounded-md text-center text-foreground font-medium">
                     Flexible
                 </Box>
-                <Box className="flex-1 min-w-[150px] bg-primary/10 p-4 rounded-lg text-center text-foreground font-medium">
+                <Box className="flex-1 min-w-[150px] bg-primary/10 p-4 rounded-md text-center text-foreground font-medium">
                     Flexible
                 </Box>
-                <Box className="w-full sm:w-auto bg-primary/10 p-4 rounded-lg text-center text-foreground font-medium">
+                <Box className="w-full sm:w-auto bg-primary/10 p-4 rounded-md text-center text-foreground font-medium">
                     Pleine largeur sur mobile
                 </Box>
             </>

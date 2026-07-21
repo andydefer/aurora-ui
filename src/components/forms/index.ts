@@ -16,7 +16,3 @@ export { Label } from './Label';
 export type { LabelProps } from './Label';
 export { Fieldset } from './Fieldset';
 export type { FieldsetProps } from './Fieldset';
-export { Legend } from './Legend';
-export type { LegendProps } from './Legend';
-export { Progress } from './Progress';
-export type { ProgressProps } from './Progress';

@@ -86,7 +86,7 @@ export const OrderStatus: Story = {
                     size="md"
                     statusIcons
                 />
-                <div className="mt-6 p-3 rounded-lg bg-primary/5 border border-primary/10">
+                <div className="mt-6 p-3 rounded-md bg-primary/5 border border-primary/10">
                     <Text variant="small" className="font-medium text-primary">Statut actuel : En préparation</Text>
                     <Text variant="caption" color="muted">Livraison prévue demain</Text>
                 </div>
@@ -170,7 +170,7 @@ export const WithError: Story = {
                     size="md"
                     statusIcons
                 />
-                <div className="mt-6 p-3 rounded-lg bg-destructive/5 border border-destructive/10">
+                <div className="mt-6 p-3 rounded-md bg-destructive/5 border border-destructive/10">
                     <Text variant="small" className="font-medium text-destructive">Erreur lors du paiement</Text>
                     <Text variant="caption" color="muted">Veuillez réessayer avec une autre carte</Text>
                     <Button variant="primary" size="sm" className="mt-2">Réessayer</Button>

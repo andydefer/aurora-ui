@@ -146,16 +146,16 @@ export const WithCustomChildren: Story = {
     args: {
         children: (
             <>
-                <a href="#" className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all">
+                <a href="#" className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-all">
                     Accueil
                 </a>
-                <a href="#" className="px-4 py-2 text-primary bg-primary/10 rounded-lg transition-all">
+                <a href="#" className="px-4 py-2 text-primary bg-primary/10 rounded-md transition-all">
                     Services
                 </a>
-                <a href="#" className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all">
+                <a href="#" className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-all">
                     Contact
                 </a>
-                <button className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all">
+                <button className="px-4 py-2 text-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-all">
                     <LogOut size={18} />
                 </button>
             </>

@@ -82,7 +82,7 @@ export function Snackbar({
 
     const classes = clsx(
         'fixed z-50',
-        'bg-card border rounded-lg shadow-lg px-4 py-3 min-w-[280px] max-w-md',
+        'bg-card border rounded-md shadow-lg px-4 py-3 min-w-[280px] max-w-md',
         'flex items-center gap-3',
         'transition-all duration-300',
         variantClasses[variant],

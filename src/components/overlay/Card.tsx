@@ -87,7 +87,7 @@ export function Card({
         xs: 'rounded-xs',
         sm: 'rounded-sm',
         md: 'rounded-md',
-        lg: 'rounded-lg',
+        lg: 'rounded-md',
         xl: 'rounded-xl',
         '2xl': 'rounded-2xl',
         '3xl': 'rounded-3xl',
@@ -185,7 +185,7 @@ export function Card({
     const contentClasses = clsx(
         'flex-1',
         noPadding ? 'p-0' : `p-${padding}`,
-        !image && 'rounded-lg'
+        !image && 'rounded-md'
     );
 
     const imageClasses = clsx(
@@ -227,7 +227,7 @@ export function Card({
     );
 
     const loadingOverlay = (
-        <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-lg z-20">
+        <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm rounded-md z-20">
             <div className="flex flex-col items-center gap-2">
                 <svg className="animate-spin h-8 w-8 text-primary" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />

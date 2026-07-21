@@ -1,27 +1,37 @@
+// src/components/forms/Switch.tsx
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 import { clsx } from '../../utils/clsx';
-import { LayoutBaseProps, Size } from '../../types';
+import { LayoutBaseProps, Size, TextColor } from '../../types';
 
-export interface SwitchProps extends LayoutBaseProps {
-    checked?: boolean;
-    onChange?: (checked: boolean) => void;
+export interface SwitchProps extends Omit<LayoutBaseProps, 'role'>, Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'color'> {
     label?: string;
+    description?: string;
     size?: Size;
+    color?: TextColor;
     disabled?: boolean;
-    name?: string;
-    id?: string;
+    required?: boolean;
+    labelPosition?: 'left' | 'right';
 }
 
-export function Switch({
-    checked = false,
-    onChange,
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({
     label,
+    description,
     size = 'md',
+    color = 'primary',
     disabled = false,
-    name,
-    id,
+    required = false,
+    checked,
+    defaultChecked,
+    onChange,
+    labelPosition = 'right',
     className = '',
     style = {},
-}: SwitchProps) {
+    id,
+    name,
+    ...props
+}, ref) => {
+    const switchId = id || `switch-${Math.random().toString(36).substring(2, 9)}`;
+
     const sizeClasses: Record<Size, { track: string; thumb: string }> = {
         xs: { track: 'w-8 h-4', thumb: 'w-3 h-3' },
         sm: { track: 'w-10 h-5', thumb: 'w-4 h-4' },
@@ -37,60 +47,126 @@ export function Switch({
     const labelSizeClasses: Record<Size, string> = {
         xs: 'text-xs',
         sm: 'text-sm',
-        md: 'text-sm',
-        lg: 'text-base',
-        xl: 'text-base',
-        '2xl': 'text-lg',
-        '3xl': 'text-lg',
-        '4xl': 'text-xl',
-        full: 'text-xl',
+        md: 'text-base',
+        lg: 'text-lg',
+        xl: 'text-lg',
+        '2xl': 'text-xl',
+        '3xl': 'text-xl',
+        '4xl': 'text-2xl',
+        full: 'text-2xl',
     };
 
+    const descriptionSizeClasses: Record<Size, string> = {
+        xs: 'text-[10px]',
+        sm: 'text-xs',
+        md: 'text-sm',
+        lg: 'text-sm',
+        xl: 'text-sm',
+        '2xl': 'text-base',
+        '3xl': 'text-base',
+        '4xl': 'text-base',
+        full: 'text-base',
+    };
+
+    const colorClasses: Record<TextColor, string> = {
+        primary: 'bg-primary focus:ring-primary',
+        secondary: 'bg-secondary focus:ring-secondary',
+        muted: 'bg-muted-foreground focus:ring-muted-foreground',
+        destructive: 'bg-destructive focus:ring-destructive',
+        success: 'bg-success focus:ring-success',
+        warning: 'bg-warning focus:ring-warning',
+    };
+
+    const isChecked = checked !== undefined ? checked : defaultChecked || false;
+
     const trackClasses = clsx(
-        'relative rounded-full transition-colors duration-200 cursor-pointer',
-        'focus-within:ring-2 focus-within:ring-primary/20',
-        'disabled:opacity-50 disabled:cursor-not-allowed',
-        checked ? 'bg-primary' : 'bg-muted',
+        'relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-300 cursor-pointer',
+        'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-background',
         sizeClasses[size].track,
-        className
+        isChecked ? colorClasses[color] : 'bg-primary/40',
+        disabled && 'opacity-50 cursor-not-allowed pointer-events-none'
     );
 
     const thumbClasses = clsx(
-        'absolute top-0.5 rounded-full bg-white shadow-md transition-all duration-200',
-        checked ? `translate-x-[calc(100%+2px)]` : 'translate-x-0.5',
-        sizeClasses[size].thumb
+        'absolute top-0.5 left-0.5 bg-card rounded-full shadow-md transition-all duration-300',
+        sizeClasses[size].thumb,
+        isChecked && `translate-x-[calc(100%+2px)]`
     );
 
-    const labelClasses = clsx(
-        'ml-3 select-none',
-        labelSizeClasses[size],
-        disabled ? 'text-muted-foreground' : 'text-foreground'
-    );
-
-    const handleToggle = () => {
-        if (!disabled) {
-            onChange?.(!checked);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!disabled && onChange) {
+            onChange(e);
         }
     };
 
-    return (
-        <label className="inline-flex items-center">
-            <div className={trackClasses} style={style}>
-                <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => { }}
-                    onClick={handleToggle}
-                    disabled={disabled}
-                    name={name}
-                    id={id}
-                    className="sr-only"
-                />
-                <span className={thumbClasses} />
-            </div>
-            {label && <span className={labelClasses}>{label}</span>}
-        </label>
+    const labelClasses = clsx(
+        'font-semibold cursor-pointer transition-colors',
+        labelSizeClasses[size],
+        disabled ? 'text-muted-foreground' : 'text-foreground',
+        labelPosition === 'left' && 'order-first mr-3',
+        labelPosition === 'right' && 'ml-3'
     );
-}
 
+    const descriptionClasses = clsx(
+        'text-muted-foreground mt-0.5 inline-block px-3',
+        descriptionSizeClasses[size],
+        disabled && 'opacity-50'
+    );
+
+    return (
+        <div className={clsx('w-full min-w-[280px]', className)} style={style}>
+            <div className="flex items-center">
+                {label && labelPosition === 'left' && (
+                    <div className="flex flex-col">
+                        <label htmlFor={switchId} className={labelClasses}>
+                            {label}
+                            {required && <span className="ml-0.5 text-destructive">*</span>}
+                        </label>
+                        {description && (
+                            <span className={descriptionClasses}>{description}</span>
+                        )}
+                    </div>
+                )}
+
+                <label
+                    htmlFor={switchId}
+                    className={trackClasses}
+                >
+                    <input
+                        ref={ref}
+                        id={switchId}
+                        type="checkbox"
+                        name={name}
+                        checked={checked}
+                        defaultChecked={defaultChecked}
+                        onChange={handleChange}
+                        disabled={disabled}
+                        required={required}
+                        className="sr-only"
+                        {...props}
+                    />
+                    <span className={thumbClasses} />
+                </label>
+
+                {label && labelPosition === 'right' && (
+                    <div className="flex flex-col">
+                        <label htmlFor={switchId} className={labelClasses}>
+                            {label}
+                            {required && <span className="ml-0.5 text-destructive">*</span>}
+                        </label>
+                        {description && (
+                            <span className={descriptionClasses}>{description}</span>
+                        )}
+                    </div>
+                )}
+            </div>
+
+            {!description && label && labelPosition === 'left' && (
+                <div className="mt-0.5" />
+            )}
+        </div>
+    );
+});
+
+Switch.displayName = 'Switch';
 export default Switch;

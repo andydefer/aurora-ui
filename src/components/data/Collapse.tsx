@@ -94,7 +94,7 @@ export function Collapse({
 
     const toggleClasses = clsx(
         'inline-flex items-center justify-center font-medium transition-all duration-200',
-        'rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50',
+        'rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50',
         toggleVariantClasses[toggleVariant],
         toggleSizeClasses[toggleSize],
         iconPosition === 'right' ? 'flex-row' : 'flex-row-reverse',

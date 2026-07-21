@@ -249,9 +249,9 @@ export function Accordion({
     };
 
     const variantClasses = {
-        default: 'rounded-lg border border-border bg-card',
+        default: 'rounded-md border border-border bg-card',
         bordered: 'rounded-xl border-2 border-border bg-card shadow-sm',
-        ghost: 'rounded-lg',
+        ghost: 'rounded-md',
         minimal: 'rounded-none',
     };
 
