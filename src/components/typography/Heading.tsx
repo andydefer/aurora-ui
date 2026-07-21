@@ -1,3 +1,4 @@
+// src/components/typography/Heading.tsx
 import React from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps, TextAlign, TextColor, FontWeight } from '../../types';
@@ -52,8 +53,6 @@ export function Heading({
         bold: 'font-bold',
     };
 
-    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-
     const classes = clsx(
         sizeClasses[level],
         colorClasses[color],
@@ -63,11 +62,19 @@ export function Heading({
         className
     );
 
-    return React.createElement(
-        Tag,
-        { className: classes, style },
-        children
-    );
+    // ✅ Solution: mapping direct des balises HTML
+    const tags = {
+        1: 'h1',
+        2: 'h2',
+        3: 'h3',
+        4: 'h4',
+        5: 'h5',
+        6: 'h6',
+    } as const;
+
+    const Tag = tags[level];
+
+    return <Tag className={classes} style={style}>{children}</Tag>;
 }
 
 export default Heading;
