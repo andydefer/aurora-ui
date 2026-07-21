@@ -160,7 +160,7 @@ export function Tabs({
                         {typeof item.icon === 'string' ? (
                             <span className="text-current">{item.icon}</span>
                         ) : (
-                            cloneElement(item.icon as React.ReactElement, {
+                            cloneElement(item.icon as any, {
                                 size: iconSize,
                                 className: 'text-current',
                             })
@@ -180,7 +180,6 @@ export function Tabs({
             </button>
         );
     };
-
     const renderContent = () => {
         if (withContent && items) {
             const activeItem = items.find(item => item.id === activeTab);
@@ -202,11 +201,10 @@ export function Tabs({
 
         return Children.map(children, (child) => {
             if (isValidElement(child) && child.type === 'button') {
-                const id = child.props.id || '';
+                const id = (child.props as any).id || '';
                 const isActive = activeTab === id;
 
-                return cloneElement(child, {
-                    ...child.props,
+                return cloneElement(child as any, {
                     key: id,
                     onClick: () => handleTabChange(id),
                     className: clsx(
@@ -220,7 +218,7 @@ export function Tabs({
                         !isActive && 'text-muted-foreground hover:text-foreground',
                         'flex-1',
                         orientation === 'vertical' && 'w-full justify-start',
-                        child.props.className
+                        (child.props as any).className
                     ),
                     role: 'tab',
                     'aria-selected': isActive,

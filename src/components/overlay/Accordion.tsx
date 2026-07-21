@@ -261,6 +261,7 @@ export function Accordion({
         lg: 'text-lg',
     };
 
+
     const renderItems = () => {
         if (items) {
             return items.map((item, index) => (
@@ -280,9 +281,8 @@ export function Accordion({
 
         return Children.map(children, (child, index) => {
             if (isValidElement(child) && child.type === AccordionItem) {
-                const id = child.props.id || String(index);
-                return cloneElement(child, {
-                    ...child.props,
+                const id = (child.props as { id?: string }).id || String(index);
+                return cloneElement(child as any, {
                     open: openItems.includes(id),
                     onToggle: () => handleToggle(id),
                     color: color,
