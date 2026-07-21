@@ -1,3 +1,4 @@
+// src/types/index.ts
 export * from './layout';
 
 export interface BaseProps {
@@ -24,4 +25,3 @@ export interface StylableProps extends BaseProps {
 
 export type ColorVariant = 'primary' | 'secondary' | 'success' | 'destructive' | 'warning' | 'info';
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-

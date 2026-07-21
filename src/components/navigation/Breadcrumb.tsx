@@ -1,4 +1,3 @@
-// src/components/navigation/Breadcrumb.tsx
 import React from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps, Size, TextColor } from '../../types';
@@ -154,10 +153,19 @@ export function Breadcrumb({
         if (typeof icon === 'string') {
             return <span className="text-current shrink-0">{icon}</span>;
         }
-        return React.cloneElement(icon as React.ReactElement, {
-            size: iconSize,
-            className: 'shrink-0 text-current',
-        });
+        if (React.isValidElement(icon)) {
+            const iconElement = icon as React.ReactElement<any>;
+            if (typeof iconElement.props.size === 'undefined' && iconSize) {
+                return React.cloneElement(iconElement, {
+                    size: iconSize,
+                    className: clsx('shrink-0 text-current', iconElement.props.className)
+                } as any);
+            }
+            return React.cloneElement(iconElement, {
+                className: clsx('shrink-0 text-current', iconElement.props.className)
+            } as any);
+        }
+        return icon;
     };
 
     const getBadgeColor = (badge: string | number) => {

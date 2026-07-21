@@ -2,6 +2,8 @@ export { Image } from './Image';
 export type { ImageProps, ImageFit } from './Image';
 export { Avatar } from './Avatar';
 export type { AvatarProps, AvatarStatus } from './Avatar';
+export { AvatarStack } from './AvatarStack';
+export type { AvatarStackProps, AvatarStackItem } from './AvatarStack';
 export { Figure } from './Figure';
 export type { FigureProps } from './Figure';
 export { Icon } from './Icon';

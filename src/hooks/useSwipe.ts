@@ -1,7 +1,7 @@
 // src/hooks/useSwipe.ts
 import { useState, useCallback } from 'react';
 
-interface SwipeOptions {
+export interface SwipeOptions {
     threshold?: number;
     onSwipeLeft?: () => void;
     onSwipeRight?: () => void;
