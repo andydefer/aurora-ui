@@ -2,9 +2,17 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
-import { X, CheckCircle, AlertCircle, AlertTriangle, Info } from 'lucide-react';
+import { X, AlertCircle, CheckCircle, Info, AlertTriangle } from 'lucide-react';
 
-export type SnackbarVariant = 'info' | 'success' | 'warning' | 'destructive';
+export type SnackbarVariant = 'info' | 'success' | 'warning' | 'destructive' | 'default';
+
+export type SnackbarPosition =
+    | 'bottom-center'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-center'
+    | 'top-left'
+    | 'top-right';
 
 export interface SnackbarProps extends LayoutBaseProps {
     message?: string;
@@ -13,8 +21,10 @@ export interface SnackbarProps extends LayoutBaseProps {
     open?: boolean;
     onClose?: () => void;
     variant?: SnackbarVariant;
-    position?: 'bottom-center' | 'bottom-left' | 'bottom-right' | 'top-center' | 'top-left' | 'top-right';
+    position?: SnackbarPosition;
     showIcon?: boolean;
+    title?: string;
+    closable?: boolean;
 }
 
 export function Snackbar({
@@ -23,9 +33,11 @@ export function Snackbar({
     duration = 4000,
     open = false,
     onClose,
-    variant = 'info',
+    variant = 'default',
     position = 'bottom-center',
     showIcon = true,
+    title,
+    closable = true,
     className = '',
     style = {},
 }: SnackbarProps) {
@@ -57,37 +69,37 @@ export function Snackbar({
         }
     }, [open, duration, onClose]);
 
-    const variantClasses = {
-        info: 'bg-primary/10 border-primary/30 text-primary',
-        success: 'bg-success/10 border-success/30 text-success',
-        warning: 'bg-warning/10 border-warning/30 text-warning',
-        destructive: 'bg-destructive/10 border-destructive/30 text-destructive',
+    const variantClasses: Record<SnackbarVariant, string> = {
+        info: 'border-blue-500/30 bg-blue-500/10 text-blue-700 dark:text-blue-300',
+        success: 'border-success/30 bg-success/10 text-success-foreground',
+        warning: 'border-warning/30 bg-warning/10 text-warning-foreground',
+        destructive: 'border-destructive/30 bg-destructive/10 text-destructive-foreground',
+        default: 'border-border/30 bg-card text-foreground',
     };
 
-    const icons = {
-        info: <Info size={20} className="text-primary" />,
+    const iconMap = {
+        info: <Info size={20} className="text-blue-500" />,
         success: <CheckCircle size={20} className="text-success" />,
         warning: <AlertTriangle size={20} className="text-warning" />,
         destructive: <AlertCircle size={20} className="text-destructive" />,
+        default: null,
     };
 
-    const positionClasses = {
-        'bottom-center': 'bottom-4 left-1/2 -translate-x-1/2',
-        'bottom-left': 'bottom-4 left-4',
-        'bottom-right': 'bottom-4 right-4',
-        'top-center': 'top-4 left-1/2 -translate-x-1/2',
-        'top-left': 'top-4 left-4',
-        'top-right': 'top-4 right-4',
+    const positionClasses: Record<SnackbarPosition, string> = {
+        'bottom-center': 'bottom-6 left-1/2 -translate-x-1/2',
+        'bottom-left': 'bottom-6 left-6',
+        'bottom-right': 'bottom-6 right-6',
+        'top-center': 'top-6 left-1/2 -translate-x-1/2',
+        'top-left': 'top-6 left-6',
+        'top-right': 'top-6 right-6',
     };
 
     const classes = clsx(
-        'fixed z-50',
-        'bg-card border rounded-md shadow-lg px-4 py-3 min-w-[280px] max-w-md',
-        'flex items-center gap-3',
-        'transition-all duration-300',
+        'fixed z-50 max-w-lg w-full rounded-2xl border shadow-2xl p-2 transition-all duration-300',
+        'backdrop-blur-md bg-opacity-90',
         variantClasses[variant],
         positionClasses[position],
-        isVisible && !isLeaving ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95',
+        isVisible && !isLeaving ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95',
         className
     );
 
@@ -95,26 +107,57 @@ export function Snackbar({
 
     return (
         <div className={classes} style={style} role="alert">
-            {showIcon && (
-                <span className="shrink-0">{icons[variant]}</span>
-            )}
-            <span className="flex-1 text-sm font-medium">{message}</span>
-            {action && (
-                <div className="shrink-0">{action}</div>
-            )}
-            <button
-                onClick={() => {
-                    setIsLeaving(true);
-                    setTimeout(() => {
-                        setIsVisible(false);
-                        onClose?.();
-                    }, 300);
-                }}
-                className="shrink-0 p-1 rounded-full hover:bg-black/5 transition-colors text-muted-foreground hover:text-foreground"
-                aria-label="Fermer"
-            >
-                <X size={16} />
-            </button>
+            <div className="flex items-start gap-4">
+                {showIcon && iconMap[variant] && (
+                    <div className={clsx(
+                        'flex items-center justify-center w-6 h-6 rounded-full shrink-0',
+                        variant === 'info' && 'bg-blue-500/20',
+                        variant === 'success' && 'bg-success/20',
+                        variant === 'warning' && 'bg-warning/20',
+                        variant === 'destructive' && 'bg-destructive/20',
+                        variant === 'default' && 'bg-muted/20'
+                    )}>
+                        {iconMap[variant]}
+                    </div>
+                )}
+                <div className="flex-1 min-w-0">
+                    {title && (
+                        <p className="font-semibold text-base leading-tight">{title}</p>
+                    )}
+                    <p className={clsx(
+                        'text-sm leading-relaxed',
+                        title ? 'text-muted-foreground' : 'text-foreground'
+                    )}>
+                        {message}
+                    </p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                    {action && (
+                        <div className="shrink-0">
+                            {action}
+                        </div>
+                    )}
+                    {closable && onClose && (
+                        <button
+                            onClick={() => {
+                                setIsLeaving(true);
+                                setTimeout(() => {
+                                    setIsVisible(false);
+                                    onClose();
+                                }, 300);
+                            }}
+                            className={clsx(
+                                'shrink-0 p-1.5 rounded-lg transition-colors',
+                                'hover:bg-black/10 dark:hover:bg-white/10',
+                                'text-muted-foreground hover:text-foreground'
+                            )}
+                            aria-label="Fermer"
+                        >
+                            <X size={18} strokeWidth={2} />
+                        </button>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
