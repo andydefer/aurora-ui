@@ -115,7 +115,6 @@
 | 75 | `RadioGroup` | Groupe de boutons radio | `RadioGroup({ value?, options?, onChange?, orientation?, name?, className?, style? })` |
 | 76 | `Switch` | Interrupteur toggle | `Switch({ checked?, onChange?, label?, size?, disabled?, className?, style? })` |
 | 77 | `Button` | Bouton d'action | `Button({ variant?, size?, loading?, disabled?, icon?, fullWidth?, className?, style?, onClick?, children? })` |
-| 78 | `ButtonGroup` | Groupe de boutons | `ButtonGroup({ items?, variant?, size?, orientation?, selected?, className?, style? })` |
 | 79 | `Label` | Étiquette de champ | `Label({ htmlFor?, required?, optional?, tooltip?, hidden?, className?, style?, children? })` |
 | 80 | `Fieldset` | Groupe de champs | `Fieldset({ legend?, disabled?, border?, className?, style?, children? })` |
 | 81 | `Legend` | Légende du fieldset | `Legend({ className?, style?, children? })` |
