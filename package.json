@@ -1,6 +1,6 @@
 {
     "name": "@andy-defer/aurora-ui",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "description": "A modern, accessible, and customizable React component library - built with Tailwind CSS",
     "license": "MIT",
     "type": "module",
@@ -14,16 +14,21 @@
         "./styles": {
             "import": "./dist/styles.css"
         },
-        "./styles.css": "./dist/styles.css"
+        "./styles.css": "./dist/styles.css",
+        "./fonts/*": {
+            "import": "./dist/fonts/*"
+        }
     },
     "files": [
         "dist",
         "README.md",
-        "LICENSE"
+        "LICENSE",
+        "src/css/fonts"
     ],
     "scripts": {
-        "build": "npm run build:css && tsup src/index.ts --format esm,cjs --dts --clean --external react,react-dom && cp src/css/styles.css dist/styles.css",
+        "build": "npm run build:css && npm run build:fonts && tsup src/index.ts --format esm,cjs --dts --clean --external react,react-dom && cp src/css/styles.css dist/styles.css",
         "build:css": "tailwindcss -i src/css/styles.css -o dist/styles.css",
+        "build:fonts": "mkdir -p dist/fonts && cp -r src/css/fonts/* dist/fonts/",
         "dev": "tsup src/index.ts --format esm,cjs --dts --watch --external react,react-dom",
         "lint": "eslint src --ext .ts,.tsx",
         "test": "vitest",
