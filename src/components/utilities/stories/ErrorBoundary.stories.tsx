@@ -25,7 +25,7 @@ const meta: Meta<typeof ErrorBoundary> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         showDetails: {
@@ -68,7 +68,7 @@ const BuggyComponent = () => {
             <Text variant="h5" className="font-bold">Composant fonctionnel</Text>
             <Text color="muted">Cliquez sur le bouton pour déclencher une erreur.</Text>
             <Button
-                variant="danger"
+                variant="destructive"
                 onClick={() => setShouldThrow(true)}
             >
                 Déclencher une erreur
@@ -82,7 +82,7 @@ const BuggyComponent = () => {
 export const Default: Story = {
     render: () => (
         <div className="max-w-2xl w-full">
-            <ErrorBoundary variant="default" color="danger">
+            <ErrorBoundary variant="default" color="destructive">
                 <BuggyComponent />
             </ErrorBoundary>
         </div>
@@ -116,7 +116,7 @@ export const Minimal: Story = {
 export const Card: Story = {
     render: () => (
         <div className="max-w-2xl w-full">
-            <ErrorBoundary variant="card" color="danger">
+            <ErrorBoundary variant="card" color="destructive">
                 <BuggyComponent />
             </ErrorBoundary>
         </div>
@@ -133,7 +133,7 @@ export const Card: Story = {
 export const Fullscreen: Story = {
     render: () => (
         <div className="w-full">
-            <ErrorBoundary variant="fullscreen" color="danger">
+            <ErrorBoundary variant="fullscreen" color="destructive">
                 <BuggyComponent />
             </ErrorBoundary>
         </div>
@@ -152,7 +152,7 @@ export const WithDetails: Story = {
         <div className="max-w-2xl w-full">
             <ErrorBoundary
                 variant="card"
-                color="danger"
+                color="destructive"
                 showDetails
                 title="Erreur critique"
                 description="Une erreur inattendue s'est produite."
@@ -234,15 +234,15 @@ export const CustomFallback: Story = {
         <div className="max-w-2xl w-full">
             <ErrorBoundary
                 variant="card"
-                color="danger"
-                fallback={(error, reset) => (
+                color="destructive"
+                fallback={(destructive, reset) => (
                     <div className="p-8 text-center">
                         <div className="text-6xl mb-4">😅</div>
-                        <Text variant="h4" className="font-bold text-danger">
+                        <Text variant="h4" className="font-bold text-destructive">
                             Oups ! Une erreur s'est produite
                         </Text>
                         <Text color="muted" className="mt-2">
-                            {error.message}
+                            {destructive.message}
                         </Text>
                         <div className="mt-6 flex gap-3 justify-center">
                             <Button variant="primary" onClick={reset}>
@@ -275,10 +275,10 @@ export const WithOnError: Story = {
         <div className="max-w-2xl w-full">
             <ErrorBoundary
                 variant="card"
-                color="danger"
-                onError={(error, errorInfo) => {
-                    console.error('Erreur capturée:', error);
-                    console.error('Info:', errorInfo);
+                color="destructive"
+                onError={(destructive, errorInfo) => {
+                    console.destructive('Erreur capturée:', destructive);
+                    console.destructive('Info:', errorInfo);
                 }}
             >
                 <BuggyComponent />

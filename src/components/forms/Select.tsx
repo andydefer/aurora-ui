@@ -16,7 +16,7 @@ export interface SelectProps extends LayoutBaseProps {
     options: SelectOption[];
     placeholder?: string;
     label?: string;
-    error?: string;
+    destructive?: string;
     size?: Size;
     searchable?: boolean;
     clearable?: boolean;
@@ -32,7 +32,7 @@ export function Select({
     options,
     placeholder = 'Sélectionner...',
     label,
-    error,
+    destructive,
     size = 'md',
     searchable = false,
     clearable = false,
@@ -79,15 +79,15 @@ export function Select({
         'transition-all duration-200 cursor-pointer',
         'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
         'disabled:opacity-50 disabled:cursor-not-allowed',
-        error && 'border-danger focus:ring-danger/20 focus:border-danger',
+        destructive && 'border-destructive focus:ring-destructive/20 focus:border-destructive',
         sizeClasses[size],
         className
     );
 
     const labelClasses = clsx(
         'block text-sm font-medium mb-1.5',
-        error ? 'text-danger' : 'text-foreground',
-        required && 'after:content-["*"] after:ml-0.5 after:text-danger'
+        destructive ? 'text-destructive' : 'text-foreground',
+        required && 'after:content-["*"] after:ml-0.5 after:text-destructive'
     );
 
     const handleSelect = (option: SelectOption) => {
@@ -181,8 +181,8 @@ export function Select({
                     </div>
                 )}
             </div>
-            {error && (
-                <p className="mt-1.5 text-sm text-danger">{error}</p>
+            {destructive && (
+                <p className="mt-1.5 text-sm text-destructive">{destructive}</p>
             )}
         </div>
     );

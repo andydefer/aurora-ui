@@ -15,7 +15,7 @@ export interface CardProps extends LayoutBaseProps {
     variant?: CardVariant;
     size?: Size;
     color?: TextColor;
-    gradient?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'custom';
+    gradient?: 'primary' | 'secondary' | 'success' | 'destructive' | 'warning' | 'custom';
     gradientFrom?: string;
     gradientTo?: string;
     glassBlur?: 'sm' | 'md' | 'lg';
@@ -137,7 +137,7 @@ export function Card({
         primary: 'border-primary/30',
         secondary: 'border-secondary/30',
         muted: 'border-muted/30',
-        danger: 'border-danger/30',
+        destructive: 'border-destructive/30',
         success: 'border-success/30',
         warning: 'border-warning/30',
     };

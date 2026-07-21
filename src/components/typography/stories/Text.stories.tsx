@@ -15,7 +15,7 @@ const meta: Meta<typeof Text> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         align: {
             control: 'select',
@@ -101,8 +101,8 @@ export const Caption: Story = {
 export const WithColor: Story = {
     args: {
         variant: 'body',
-        color: 'danger',
-        children: 'Texte en couleur danger',
+        color: 'destructive',
+        children: 'Texte en couleur destructive',
     },
 };
 

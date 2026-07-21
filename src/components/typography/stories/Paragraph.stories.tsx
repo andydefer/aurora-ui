@@ -15,7 +15,7 @@ const meta: Meta<typeof Paragraph> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         size: {
             control: 'select',
@@ -89,7 +89,7 @@ export const Muted: Story = {
 export const Danger: Story = {
     args: {
         children: lorem,
-        color: 'danger',
+        color: 'destructive',
     },
 };
 

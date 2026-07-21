@@ -20,7 +20,7 @@ const meta: Meta<typeof Navigation> = {
         },
         activeColor: {
             control: 'select',
-            options: ['primary', 'secondary', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'destructive', 'success', 'warning'],
         },
         collapsible: { control: 'boolean' },
         highlight: { control: 'boolean' },
@@ -108,7 +108,7 @@ export const WithCustomGap: Story = {
 export const ActiveColorDanger: Story = {
     args: {
         items: items,
-        activeColor: 'danger',
+        activeColor: 'destructive',
         orientation: 'horizontal',
         gap: 'lg',
     },

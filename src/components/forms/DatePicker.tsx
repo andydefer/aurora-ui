@@ -11,7 +11,7 @@ export interface DatePickerProps extends LayoutBaseProps {
     format?: string;
     locale?: string;
     label?: string;
-    error?: string;
+    destructive?: string;
     placeholder?: string;
     size?: Size;
     disabled?: boolean;
@@ -28,7 +28,7 @@ export function DatePicker({
     format = 'YYYY-MM-DD',
     locale = 'fr-FR',
     label,
-    error,
+    destructive,
     placeholder = 'Sélectionner une date',
     size = 'md',
     disabled = false,
@@ -89,7 +89,7 @@ export function DatePicker({
         'transition-all duration-200 cursor-pointer',
         'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
         'disabled:opacity-50 disabled:cursor-not-allowed',
-        error && 'border-danger focus:ring-danger/20 focus:border-danger',
+        destructive && 'border-destructive focus:ring-destructive/20 focus:border-destructive',
         sizeClasses[size],
         className
     );
@@ -190,8 +190,8 @@ export function DatePicker({
 
     const labelClasses = clsx(
         'block text-sm font-medium mb-1.5',
-        error ? 'text-danger' : 'text-foreground',
-        required && 'after:content-["*"] after:ml-0.5 after:text-danger'
+        destructive ? 'text-destructive' : 'text-foreground',
+        required && 'after:content-["*"] after:ml-0.5 after:text-destructive'
     );
 
     return (
@@ -278,8 +278,8 @@ export function DatePicker({
                     </div>
                 )}
             </div>
-            {error && (
-                <p className="mt-1.5 text-sm text-danger">{error}</p>
+            {destructive && (
+                <p className="mt-1.5 text-sm text-destructive">{destructive}</p>
             )}
         </div>
     );

@@ -3,7 +3,7 @@ import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
 import { Info, AlertCircle, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 
-export type InputInfoVariant = 'info' | 'success' | 'warning' | 'error';
+export type InputInfoVariant = 'info' | 'success' | 'warning' | 'destructive';
 
 export interface InputInfoProps extends LayoutBaseProps {
     children?: ReactNode;
@@ -41,7 +41,7 @@ export function InputInfo({
             container: 'bg-yellow-500/10 border-yellow-500 text-yellow-600 dark:text-yellow-400',
             icon: 'text-yellow-500',
         },
-        error: {
+        destructive: {
             container: 'bg-red-500/10 border-red-500 text-red-600 dark:text-red-400',
             icon: 'text-red-500',
         },
@@ -63,7 +63,7 @@ export function InputInfo({
         info: <Info size={iconSizes[size]} />,
         success: <CheckCircle size={iconSizes[size]} />,
         warning: <AlertTriangle size={iconSizes[size]} />,
-        error: <AlertCircle size={iconSizes[size]} />,
+        destructive: <AlertCircle size={iconSizes[size]} />,
     };
 
     const displayIcon = icon || defaultIcons[variant];

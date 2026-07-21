@@ -1,3 +1,4 @@
+// src/components/feedback/Popover.tsx
 import { ReactNode, useState, useRef, useEffect } from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
@@ -14,6 +15,8 @@ export interface PopoverProps extends LayoutBaseProps {
     onClose?: () => void;
     onOpen?: () => void;
     className?: string;
+    offset?: number;
+    withArrow?: boolean;
 }
 
 export function Popover({
@@ -24,6 +27,8 @@ export function Popover({
     open: controlledOpen,
     onClose,
     onOpen,
+    offset = 2,
+    withArrow = true,
     className = '',
     style = {},
 }: PopoverProps) {
@@ -46,10 +51,17 @@ export function Popover({
     }, [controlledOpen, onClose]);
 
     const positionClasses = {
-        top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
-        bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
-        left: 'right-full top-1/2 -translate-y-1/2 mr-2',
-        right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+        top: `bottom-full left-1/2 -translate-x-1/2 mb-${offset}`,
+        bottom: `top-full left-1/2 -translate-x-1/2 mt-${offset}`,
+        left: `right-full top-1/2 -translate-y-1/2 mr-${offset}`,
+        right: `left-full top-1/2 -translate-y-1/2 ml-${offset}`,
+    };
+
+    const arrowClasses = {
+        top: 'bottom-[-6px] left-1/2 -translate-x-1/2 border-t-card',
+        bottom: 'top-[-6px] left-1/2 -translate-x-1/2 border-b-card',
+        left: 'right-[-6px] top-1/2 -translate-y-1/2 border-l-card',
+        right: 'left-[-6px] top-1/2 -translate-y-1/2 border-r-card',
     };
 
     const handleToggle = () => {
@@ -109,6 +121,12 @@ export function Popover({
             {children}
             {content && (
                 <div className={classes} style={style} role="dialog">
+                    {withArrow && (
+                        <span className={clsx(
+                            'absolute w-0 h-0 border-[6px] border-transparent',
+                            arrowClasses[position]
+                        )} />
+                    )}
                     {content}
                 </div>
             )}

@@ -35,7 +35,7 @@ const meta: Meta<typeof Tabs> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         fullWidth: {
@@ -312,7 +312,7 @@ export const DangerColor: Story = {
         items: itemsWithContent,
         variant: 'default',
         size: 'md',
-        color: 'danger',
+        color: 'destructive',
         orientation: 'horizontal',
         defaultActive: 'home',
         withContent: true,

@@ -207,7 +207,7 @@ export const WithHeart: Story = {
         children: (
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-4 px-6 w-full">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    Fait avec <Heart size={14} className="text-danger" /> par Aurora UI
+                    Fait avec <Heart size={14} className="text-destructive" /> par Aurora UI
                 </div>
                 <span className="text-sm text-muted-foreground">
                     © 2026 Tous droits réservés

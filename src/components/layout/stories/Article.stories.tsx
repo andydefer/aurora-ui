@@ -75,7 +75,7 @@ export const Minimal: Story = {
         date: '15 Juillet 2026',
         children: (
             <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                Sed ut perspiciatis unde omnis iste natus destructive sit voluptatem accusantium doloremque laudantium.
             </p>
         ),
     },

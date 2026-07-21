@@ -38,7 +38,7 @@ const meta: Meta<typeof ScrollList> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         showScrollbar: {
@@ -345,7 +345,7 @@ export const HorizontalProducts: Story = {
                             />
                             {product.badge && (
                                 <Badge
-                                    variant="danger"
+                                    variant="destructive"
                                     size="sm"
                                     className="absolute top-2 right-2"
                                 >
@@ -423,7 +423,7 @@ export const WithSnap: Story = {
                             />
                             {product.badge && (
                                 <Badge
-                                    variant="danger"
+                                    variant="destructive"
                                     size="sm"
                                     className="absolute top-2 right-2"
                                 >

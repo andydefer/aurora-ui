@@ -59,7 +59,7 @@ export function ScrollList({
         primary: 'scrollbar-thumb-primary/50 hover:scrollbar-thumb-primary',
         secondary: 'scrollbar-thumb-secondary/50 hover:scrollbar-thumb-secondary',
         muted: 'scrollbar-thumb-muted/50 hover:scrollbar-thumb-muted',
-        danger: 'scrollbar-thumb-danger/50 hover:scrollbar-thumb-danger',
+        destructive: 'scrollbar-thumb-destructive/50 hover:scrollbar-thumb-destructive',
         success: 'scrollbar-thumb-success/50 hover:scrollbar-thumb-success',
         warning: 'scrollbar-thumb-warning/50 hover:scrollbar-thumb-warning',
     };

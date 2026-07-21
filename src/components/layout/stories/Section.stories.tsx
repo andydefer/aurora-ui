@@ -44,7 +44,7 @@ const meta: Meta<typeof Section> = {
         },
         titleColor: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         divider: { control: 'boolean' },
         separator: { control: 'boolean' },
@@ -244,9 +244,9 @@ export const WithSpacing: Story = {
 
 export const WithDangerTitle: Story = {
     args: {
-        title: 'Section avec titre danger',
-        subtitle: 'Le titre est en couleur danger.',
-        titleColor: 'danger',
+        title: 'Section avec titre destructive',
+        subtitle: 'Le titre est en couleur destructive.',
+        titleColor: 'destructive',
         background: 'card',
         padding: 8,
         children: (

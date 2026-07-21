@@ -12,8 +12,8 @@ export type ErrorType = 'generic' | 'network' | 'server' | 'notfound' | 'forbidd
 
 export interface ErrorBoundaryProps extends LayoutBaseProps {
     children: ReactNode;
-    fallback?: ReactNode | ((error: Error, reset: () => void) => ReactNode);
-    onError?: (error: Error, errorInfo: ErrorInfo) => void;
+    fallback?: ReactNode | ((destructive: Error, reset: () => void) => ReactNode);
+    onError?: (destructive: Error, errorInfo: ErrorInfo) => void;
     variant?: ErrorVariant;
     errorType?: ErrorType;
     showDetails?: boolean;
@@ -31,7 +31,7 @@ export interface ErrorBoundaryProps extends LayoutBaseProps {
 
 interface ErrorBoundaryState {
     hasError: boolean;
-    error: Error | null;
+    destructive: Error | null;
     errorInfo: ErrorInfo | null;
     retryCount: number;
 }
@@ -41,25 +41,25 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         super(props);
         this.state = {
             hasError: false,
-            error: null,
+            destructive: null,
             errorInfo: null,
             retryCount: 0
         };
     }
 
-    static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-        return { hasError: true, error, errorInfo: null, retryCount: 0 };
+    static getDerivedStateFromError(destructive: Error): ErrorBoundaryState {
+        return { hasError: true, destructive, errorInfo: null, retryCount: 0 };
     }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    componentDidCatch(destructive: Error, errorInfo: ErrorInfo) {
         this.setState({ errorInfo });
-        this.props.onError?.(error, errorInfo);
+        this.props.onError?.(destructive, errorInfo);
     }
 
     reset = () => {
         this.setState((prev) => ({
             hasError: false,
-            error: null,
+            destructive: null,
             errorInfo: null,
             retryCount: prev.retryCount + 1
         }));
@@ -123,17 +123,17 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             showDetails = false,
             showReset = true,
             resetText = 'Réessayer',
-            color = 'danger',
+            color = 'destructive',
             actions = [],
             onRetry,
             onHome,
             onBack,
         } = this.props;
-        const { hasError, error, errorInfo, retryCount } = this.state;
+        const { hasError, destructive, errorInfo, retryCount } = this.state;
 
         if (hasError) {
             if (typeof fallback === 'function') {
-                return fallback(error as Error, this.reset);
+                return fallback(destructive as Error, this.reset);
             }
 
             if (fallback) {
@@ -152,7 +152,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 primary: 'border-primary/30 text-primary bg-primary/5',
                 secondary: 'border-secondary/30 text-secondary bg-secondary/5',
                 muted: 'border-muted/30 text-muted-foreground bg-muted/5',
-                danger: 'border-danger/30 text-danger bg-danger/5',
+                destructive: 'border-destructive/30 text-destructive bg-destructive/5',
                 success: 'border-success/30 text-success bg-success/5',
                 warning: 'border-warning/30 text-warning bg-warning/5',
             };
@@ -196,17 +196,17 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                     </Text>
 
                     {/* Code d'erreur */}
-                    {error && (
+                    {destructive && (
                         <div className="mt-2">
                             <span className="text-xs font-mono text-muted-foreground/60">
-                                Erreur: {error.name || 'Error'}
+                                Erreur: {destructive.name || 'Error'}
                                 {retryCount > 0 && ` • Tentative ${retryCount}`}
                             </span>
                         </div>
                     )}
 
                     {/* Message d'erreur */}
-                    {error && (
+                    {destructive && (
                         <div className={clsx(
                             'mt-4 p-4 rounded-lg w-full max-w-md text-left',
                             'bg-muted/20 border border-border/50',
@@ -214,7 +214,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                             'transition-all duration-300'
                         )}>
                             <code className="text-foreground/80 break-all">
-                                {error.message}
+                                {destructive.message}
                             </code>
                         </div>
                     )}

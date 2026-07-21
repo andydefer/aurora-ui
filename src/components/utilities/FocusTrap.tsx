@@ -113,7 +113,7 @@ export function FocusTrap({
         primary: 'bg-primary text-primary-foreground',
         secondary: 'bg-secondary text-secondary-foreground',
         muted: 'bg-muted text-muted-foreground',
-        danger: 'bg-danger text-white',
+        destructive: 'bg-destructive text-white',
         success: 'bg-success text-white',
         warning: 'bg-warning text-white',
     };

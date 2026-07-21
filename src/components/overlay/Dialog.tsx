@@ -5,7 +5,7 @@ import { LayoutBaseProps, Size, TextColor } from '../../types';
 import { X, AlertCircle, AlertTriangle, Info, CheckCircle, Clock } from 'lucide-react';
 import { Card } from './Card';
 
-export type DialogType = 'default' | 'info' | 'success' | 'warning' | 'error' | 'confirm' | 'timeout';
+export type DialogType = 'default' | 'info' | 'success' | 'warning' | 'destructive' | 'confirm' | 'timeout';
 
 export interface DialogProps extends LayoutBaseProps {
     open?: boolean;
@@ -148,11 +148,11 @@ export function Dialog({
             border: 'border-warning/20',
             color: 'text-warning',
         },
-        error: {
-            icon: <AlertCircle size={28} className="text-danger" />,
-            bg: 'bg-danger/10',
-            border: 'border-danger/20',
-            color: 'text-danger',
+        destructive: {
+            icon: <AlertCircle size={28} className="text-destructive" />,
+            bg: 'bg-destructive/10',
+            border: 'border-destructive/20',
+            color: 'text-destructive',
         },
         confirm: {
             icon: <AlertCircle size={28} className="text-warning" />,
@@ -180,7 +180,7 @@ export function Dialog({
         info: 'primary',
         success: 'success',
         warning: 'warning',
-        error: 'danger',
+        destructive: 'destructive',
         confirm: 'warning',
         timeout: 'warning',
     };
@@ -215,7 +215,7 @@ export function Dialog({
         primary: 'bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/50',
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:ring-secondary/50',
         muted: 'bg-muted text-muted-foreground hover:bg-muted/80 focus:ring-muted/50',
-        danger: 'bg-danger text-white hover:bg-danger/90 focus:ring-danger/50',
+        destructive: 'bg-destructive text-white hover:bg-destructive/90 focus:ring-destructive/50',
         success: 'bg-success text-white hover:bg-success/90 focus:ring-success/50',
         warning: 'bg-warning text-white hover:bg-warning/90 focus:ring-warning/50',
     };
@@ -288,7 +288,7 @@ export function Dialog({
                                 {isTimeout && showTimer && (
                                     <span className={clsx(
                                         'ml-2 px-3 py-1 text-sm font-medium rounded-full',
-                                        timeLeft <= 3000 ? 'bg-danger/10 text-danger animate-pulse' : 'bg-muted/10 text-muted-foreground'
+                                        timeLeft <= 3000 ? 'bg-destructive/10 text-destructive animate-pulse' : 'bg-muted/10 text-muted-foreground'
                                     )}>
                                         {formatTime(timeLeft)}
                                     </span>

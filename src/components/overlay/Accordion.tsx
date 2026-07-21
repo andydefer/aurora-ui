@@ -78,7 +78,7 @@ export function AccordionItem({
         primary: 'text-primary border-primary',
         secondary: 'text-secondary border-secondary',
         muted: 'text-muted-foreground border-muted',
-        danger: 'text-danger border-danger',
+        destructive: 'text-destructive border-destructive',
         success: 'text-success border-success',
         warning: 'text-warning border-warning',
     };

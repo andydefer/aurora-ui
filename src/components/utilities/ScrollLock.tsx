@@ -101,7 +101,7 @@ export function ScrollLock({
         primary: 'bg-primary text-primary-foreground border-primary/20',
         secondary: 'bg-secondary text-secondary-foreground border-secondary/20',
         muted: 'bg-muted text-muted-foreground border-muted/20',
-        danger: 'bg-danger text-white border-danger/20',
+        destructive: 'bg-destructive text-white border-destructive/20',
         success: 'bg-success text-white border-success/20',
         warning: 'bg-warning text-white border-warning/20',
     };

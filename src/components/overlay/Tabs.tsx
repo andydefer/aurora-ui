@@ -77,7 +77,7 @@ export function Tabs({
         primary: 'text-primary border-primary bg-primary/10',
         secondary: 'text-secondary border-secondary bg-secondary/10',
         muted: 'text-muted-foreground border-muted bg-muted/10',
-        danger: 'text-danger border-danger bg-danger/10',
+        destructive: 'text-destructive border-destructive bg-destructive/10',
         success: 'text-success border-success bg-success/10',
         warning: 'text-warning border-warning bg-warning/10',
     };

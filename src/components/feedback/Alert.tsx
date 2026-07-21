@@ -1,9 +1,10 @@
+// src/components/feedback/Alert.tsx
 import { ReactNode, useState } from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
 import { AlertCircle, AlertTriangle, CheckCircle, Info, X } from 'lucide-react';
 
-export type AlertVariant = 'info' | 'success' | 'warning' | 'error';
+export type AlertVariant = 'info' | 'success' | 'warning' | 'destructive';
 
 export interface AlertProps extends LayoutBaseProps {
     variant?: AlertVariant;
@@ -12,6 +13,9 @@ export interface AlertProps extends LayoutBaseProps {
     closable?: boolean;
     icon?: ReactNode;
     onClose?: () => void;
+    compact?: boolean;
+    withBorder?: boolean;
+    elevated?: boolean;
 }
 
 export function Alert({
@@ -21,6 +25,9 @@ export function Alert({
     closable = false,
     icon,
     onClose,
+    compact = false,
+    withBorder = true,
+    elevated = false,
     className = '',
     style = {},
 }: AlertProps) {
@@ -28,24 +35,24 @@ export function Alert({
 
     const variantClasses = {
         info: {
-            container: 'bg-blue-500/10 border-blue-500 text-blue-700 dark:text-blue-300',
-            icon: 'text-blue-500',
-            title: 'text-blue-800 dark:text-blue-200',
+            container: 'bg-primary/10 border-primary/30 text-primary',
+            icon: 'text-primary',
+            title: 'text-primary',
         },
         success: {
-            container: 'bg-green-500/10 border-green-500 text-green-700 dark:text-green-300',
-            icon: 'text-green-500',
-            title: 'text-green-800 dark:text-green-200',
+            container: 'bg-success/10 border-success/30 text-success',
+            icon: 'text-success',
+            title: 'text-success',
         },
         warning: {
-            container: 'bg-yellow-500/10 border-yellow-500 text-yellow-700 dark:text-yellow-300',
-            icon: 'text-yellow-500',
-            title: 'text-yellow-800 dark:text-yellow-200',
+            container: 'bg-warning/10 border-warning/30 text-warning',
+            icon: 'text-warning',
+            title: 'text-warning',
         },
-        error: {
-            container: 'bg-red-500/10 border-red-500 text-red-700 dark:text-red-300',
-            icon: 'text-red-500',
-            title: 'text-red-800 dark:text-red-200',
+        destructive: {
+            container: 'bg-destructive/10 border-destructive/30 text-destructive',
+            icon: 'text-destructive',
+            title: 'text-destructive',
         },
     };
 
@@ -53,15 +60,19 @@ export function Alert({
         info: <Info size={20} />,
         success: <CheckCircle size={20} />,
         warning: <AlertTriangle size={20} />,
-        error: <AlertCircle size={20} />,
+        destructive: <AlertCircle size={20} />,
     };
 
     const displayIcon = icon || defaultIcons[variant];
     const variantStyle = variantClasses[variant];
 
     const classes = clsx(
-        'relative rounded-lg border p-4 transition-all duration-300',
+        'relative transition-all duration-300',
+        'flex items-start gap-3',
         variantStyle.container,
+        withBorder && 'border',
+        elevated && 'shadow-md',
+        compact ? 'p-3 rounded-md' : 'p-4 rounded-lg',
         !isVisible && 'opacity-0 scale-95 hidden',
         className
     );
@@ -75,28 +86,28 @@ export function Alert({
 
     return (
         <div className={classes} style={style} role="alert">
-            <div className="flex items-start gap-3">
-                <span className={clsx('shrink-0 mt-0.5', variantStyle.icon)}>
-                    {displayIcon}
-                </span>
-                <div className="flex-1">
-                    {title && (
-                        <h4 className={clsx('font-semibold mb-1', variantStyle.title)}>
-                            {title}
-                        </h4>
-                    )}
-                    <div className="text-sm">{children}</div>
-                </div>
-                {closable && (
-                    <button
-                        onClick={handleClose}
-                        className="shrink-0 p-1 rounded hover:bg-black/5 transition-colors"
-                        aria-label="Fermer"
-                    >
-                        <X size={18} />
-                    </button>
+            <span className={clsx('shrink-0 mt-0.5', variantStyle.icon)}>
+                {displayIcon}
+            </span>
+            <div className="flex-1 min-w-0">
+                {title && (
+                    <h4 className={clsx('font-semibold', variantStyle.title, compact ? 'text-sm' : 'text-base')}>
+                        {title}
+                    </h4>
                 )}
+                <div className={clsx('text-foreground/80', compact ? 'text-sm' : 'text-base', title && 'mt-0.5')}>
+                    {children}
+                </div>
             </div>
+            {closable && (
+                <button
+                    onClick={handleClose}
+                    className="shrink-0 p-1 rounded-full hover:bg-black/5 transition-colors text-muted-foreground hover:text-foreground"
+                    aria-label="Fermer"
+                >
+                    <X size={18} />
+                </button>
+            )}
         </div>
     );
 }

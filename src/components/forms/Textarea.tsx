@@ -12,7 +12,7 @@ export interface TextareaProps extends LayoutBaseProps {
     autoResize?: boolean;
     maxRows?: number;
     label?: string;
-    error?: string;
+    destructive?: string;
     disabled?: boolean;
     required?: boolean;
     id?: string;
@@ -28,7 +28,7 @@ export function Textarea({
     autoResize = false,
     maxRows,
     label,
-    error,
+    destructive,
     disabled = false,
     required = false,
     id,
@@ -60,7 +60,7 @@ export function Textarea({
         'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         'read-only:bg-muted/20',
-        error && 'border-danger focus:ring-danger/20 focus:border-danger',
+        destructive && 'border-destructive focus:ring-destructive/20 focus:border-destructive',
         resizeClasses[resize],
         'px-3.5 py-2 text-sm',
         className
@@ -68,12 +68,12 @@ export function Textarea({
 
     const labelClasses = clsx(
         'block text-sm font-medium mb-1.5',
-        error ? 'text-danger' : 'text-foreground',
-        required && 'after:content-["*"] after:ml-0.5 after:text-danger'
+        destructive ? 'text-destructive' : 'text-foreground',
+        required && 'after:content-["*"] after:ml-0.5 after:text-destructive'
     );
 
     const errorClasses = clsx(
-        'mt-1.5 text-sm text-danger'
+        'mt-1.5 text-sm text-destructive'
     );
 
     return (
@@ -96,8 +96,8 @@ export function Textarea({
                 className={classes}
                 style={style}
             />
-            {error && (
-                <p className={errorClasses}>{error}</p>
+            {destructive && (
+                <p className={errorClasses}>{destructive}</p>
             )}
         </div>
     );

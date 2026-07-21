@@ -11,7 +11,7 @@ const meta: Meta<typeof Address> = {
     argTypes: {
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         showCoordinates: { control: 'boolean' },
         showIcon: { control: 'boolean' },

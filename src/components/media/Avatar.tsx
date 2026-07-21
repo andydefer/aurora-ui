@@ -34,7 +34,7 @@ export function Avatar({
     className = '',
     style = {},
 }: AvatarProps) {
-    const [error, setError] = React.useState(false);
+    const [destructive, setError] = React.useState(false);
 
     const sizeClasses: Record<Size, string> = {
         xs: 'w-10 h-10 text-xs',
@@ -70,7 +70,7 @@ export function Avatar({
         online: 'bg-success text-white shadow-md',
         offline: 'bg-muted text-muted-foreground shadow-md',
         away: 'bg-warning text-white shadow-md',
-        busy: 'bg-danger text-white shadow-md',
+        busy: 'bg-destructive text-white shadow-md',
         none: 'hidden',
     };
 
@@ -115,7 +115,7 @@ export function Avatar({
         }
     };
 
-    const imageSrc = error ? getFallbackUrl() : src;
+    const imageSrc = destructive ? getFallbackUrl() : src;
 
     const avatarClasses = clsx(
         'relative shrink-0 overflow-hidden flex items-center justify-center',
@@ -140,7 +140,7 @@ export function Avatar({
     return (
         <div className="relative inline-block">
             <div className={avatarClasses} style={style}>
-                {src && !error ? (
+                {src && !destructive ? (
                     <img
                         src={imageSrc}
                         alt={alt || name || 'Avatar'}

@@ -7,7 +7,7 @@ import { Loader2 } from 'lucide-react';
 export type ButtonVariant =
     | 'primary'
     | 'secondary'
-    | 'danger'
+    | 'destructive'
     | 'success'
     | 'warning'
     | 'ghost'
@@ -53,7 +53,7 @@ export function Button({
     shadow = false,
     animated = false,
     badge,
-    badgeColor = 'danger',
+    badgeColor = 'destructive',
     ariaLabel,
     className = '',
     style = {},
@@ -61,7 +61,7 @@ export function Button({
     const variantClasses: Record<ButtonVariant, string> = {
         primary: 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground focus:ring-primary/50',
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:text-secondary-foreground focus:ring-secondary/50',
-        danger: 'bg-danger text-danger-foreground hover:bg-danger/90 hover:text-danger-foreground focus:ring-danger/50',
+        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:text-destructive-foreground focus:ring-destructive/50',
         success: 'bg-success text-success-foreground hover:bg-success/90 hover:text-success-foreground focus:ring-success/50',
         warning: 'bg-warning text-warning-foreground hover:bg-warning/90 hover:text-warning-foreground focus:ring-warning/50',
         ghost: 'bg-transparent text-foreground hover:bg-muted/20 hover:text-foreground focus:ring-primary/50',
@@ -90,7 +90,7 @@ export function Button({
         primary: 'bg-primary text-primary-foreground',
         secondary: 'bg-secondary text-secondary-foreground',
         muted: 'bg-muted text-muted-foreground',
-        danger: 'bg-danger text-danger-foreground',
+        destructive: 'bg-destructive text-destructive-foreground',
         success: 'bg-success text-success-foreground',
         warning: 'bg-warning text-warning-foreground',
     };

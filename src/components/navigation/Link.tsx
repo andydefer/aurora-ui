@@ -32,7 +32,7 @@ export function Link({
         primary: 'text-foreground hover:text-primary',
         secondary: 'text-secondary hover:text-primary',
         muted: 'text-muted-foreground hover:text-primary',
-        danger: 'text-danger hover:text-danger/80',
+        destructive: 'text-destructive hover:text-destructive/80',
         success: 'text-success hover:text-success/80',
         warning: 'text-warning hover:text-warning/80',
     };

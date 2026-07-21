@@ -171,7 +171,7 @@ export function Image({
                 onLoad={handleLoad}
                 onError={handleError}
                 data-loaded={!isLoading}
-                data-error={hasError}
+                data-destructive={hasError}
             />
         </div>
     );

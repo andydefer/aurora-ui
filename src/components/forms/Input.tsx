@@ -12,7 +12,7 @@ export interface InputProps extends LayoutBaseProps {
     onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     placeholder?: string;
     label?: string;
-    error?: string;
+    destructive?: string;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     size?: Size;
@@ -37,7 +37,7 @@ export function Input({
     onFocus,
     placeholder,
     label,
-    error,
+    destructive,
     leftIcon,
     rightIcon,
     size = 'md',
@@ -78,8 +78,8 @@ export function Input({
         'focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         'read-only:bg-muted/20',
-        error ? 'border-danger focus:ring-danger/20 focus:border-danger' : 'border-border',
-        isFocused && !error && 'border-primary',
+        destructive ? 'border-destructive focus:ring-destructive/20 focus:border-destructive' : 'border-border',
+        isFocused && !destructive && 'border-primary',
         leftIcon && 'pl-9',
         rightIcon && 'pr-9',
         isPassword && 'pr-9',
@@ -89,12 +89,12 @@ export function Input({
 
     const labelClasses = clsx(
         'block text-sm font-medium mb-1.5',
-        error ? 'text-danger' : 'text-foreground',
-        required && 'after:content-["*"] after:ml-0.5 after:text-danger'
+        destructive ? 'text-destructive' : 'text-foreground',
+        required && 'after:content-["*"] after:ml-0.5 after:text-destructive'
     );
 
     const errorClasses = clsx(
-        'mt-1.5 text-sm text-danger flex items-center gap-1'
+        'mt-1.5 text-sm text-destructive flex items-center gap-1'
     );
 
     const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
@@ -160,16 +160,16 @@ export function Input({
                         {rightIcon}
                     </span>
                 )}
-                {error && (
-                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-danger">
+                {destructive && (
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-destructive">
                         <AlertCircle size={18} />
                     </span>
                 )}
             </div>
-            {error && (
+            {destructive && (
                 <p className={errorClasses}>
                     <AlertCircle size={14} />
-                    {error}
+                    {destructive}
                 </p>
             )}
         </div>

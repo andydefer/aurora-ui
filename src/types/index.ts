@@ -15,13 +15,13 @@ export interface BaseProps {
 
 export interface StylableProps extends BaseProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    variant?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
+    variant?: 'primary' | 'secondary' | 'success' | 'destructive' | 'warning' | 'info';
     disabled?: boolean;
     loading?: boolean;
     fullWidth?: boolean;
     as?: React.ElementType;
 }
 
-export type ColorVariant = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
+export type ColorVariant = 'primary' | 'secondary' | 'success' | 'destructive' | 'warning' | 'info';
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 

@@ -1,3 +1,4 @@
+// src/components/data/Timeline.tsx
 import { ReactNode } from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps, TextColor } from '../../types';
@@ -11,11 +12,15 @@ export interface TimelineItem {
     active?: boolean;
 }
 
+export type TimelineOrientation = 'vertical' | 'horizontal';
+
 export interface TimelineProps extends LayoutBaseProps {
     items: TimelineItem[];
-    orientation?: 'vertical' | 'horizontal';
+    orientation?: TimelineOrientation;
     alternate?: boolean;
     color?: TextColor;
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
 }
 
 export function Timeline({
@@ -23,6 +28,7 @@ export function Timeline({
     orientation = 'vertical',
     alternate = false,
     color = 'primary',
+    size = 'md',
     className = '',
     style = {},
 }: TimelineProps) {
@@ -30,36 +36,44 @@ export function Timeline({
         primary: 'border-primary bg-primary',
         secondary: 'border-secondary bg-secondary',
         muted: 'border-muted bg-muted',
-        danger: 'border-danger bg-danger',
+        destructive: 'border-destructive bg-destructive',
         success: 'border-success bg-success',
         warning: 'border-warning bg-warning',
     };
 
+    const sizeClasses = {
+        sm: { dot: 'w-4 h-4', line: 'w-0.5', gap: 'gap-3' },
+        md: { dot: 'w-6 h-6', line: 'w-0.5', gap: 'gap-4' },
+        lg: { dot: 'w-8 h-8', line: 'w-0.5', gap: 'gap-6' },
+    };
+
     const classes = clsx(
         'relative',
-        orientation === 'vertical' ? 'flex flex-col gap-6' : 'flex flex-row gap-8 overflow-x-auto pb-4',
+        orientation === 'vertical' ? `flex flex-col ${sizeClasses[size].gap}` : `flex flex-row gap-8 overflow-x-auto pb-4`,
         className
     );
 
     const itemClasses = (index: number) => clsx(
         'relative flex',
-        orientation === 'vertical' ? 'flex-row gap-4' : 'flex-col items-center gap-2 min-w-[120px]',
+        orientation === 'vertical' ? `flex-row ${sizeClasses[size].gap}` : 'flex-col items-center gap-2 min-w-[120px]',
         alternate && orientation === 'vertical' && index % 2 === 0 ? 'flex-row-reverse' : '',
         alternate && orientation === 'vertical' && index % 2 === 0 ? 'text-right' : ''
     );
 
     const lineClasses = (index: number) => clsx(
-        'absolute',
+        'absolute bg-border',
         orientation === 'vertical'
-            ? 'left-3 top-6 w-0.5 h-[calc(100%-1.5rem)]'
-            : 'top-3 left-6 h-0.5 w-[calc(100%-1.5rem)]',
+            ? `left-${parseInt(sizeClasses[size].dot) / 2} top-${parseInt(sizeClasses[size].dot)} w-${sizeClasses[size].line} h-[calc(100%-${parseInt(sizeClasses[size].dot)}rem)]`
+            : `top-${parseInt(sizeClasses[size].dot) / 2} left-${parseInt(sizeClasses[size].dot)} h-${sizeClasses[size].line} w-[calc(100%-${parseInt(sizeClasses[size].dot)}rem)]`,
         index < items.length - 1 ? 'bg-border' : 'hidden'
     );
 
     const dotClasses = clsx(
-        'w-6 h-6 rounded-full border-2 shrink-0 flex items-center justify-center',
+        'rounded-full border-2 shrink-0 flex items-center justify-center',
+        sizeClasses[size].dot,
         colorClasses[color],
-        'bg-background'
+        'bg-background transition-all duration-300',
+        'hover:scale-110'
     );
 
     const contentClasses = clsx(

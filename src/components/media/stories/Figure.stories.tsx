@@ -15,7 +15,7 @@ const meta: Meta<typeof Figure> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         size: {
             control: 'select',
@@ -160,8 +160,8 @@ export const FullWidth: Story = {
 export const WithDangerColor: Story = {
     args: {
         image: sampleImage,
-        caption: 'Légende en couleur danger',
-        color: 'danger',
+        caption: 'Légende en couleur destructive',
+        color: 'destructive',
         size: 'md',
     },
 };

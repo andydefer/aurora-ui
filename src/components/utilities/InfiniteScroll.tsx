@@ -141,16 +141,16 @@ export function InfiniteScroll({
         primary: 'text-primary',
         secondary: 'text-secondary',
         muted: 'text-muted-foreground',
-        danger: 'text-danger',
+        destructive: 'text-destructive',
         success: 'text-success',
         warning: 'text-warning',
     };
 
-    const buttonColorMap: Record<TextColor, 'primary' | 'secondary' | 'danger' | 'success' | 'warning'> = {
+    const buttonColorMap: Record<TextColor, 'primary' | 'secondary' | 'destructive' | 'success' | 'warning'> = {
         primary: 'primary',
         secondary: 'secondary',
         muted: 'primary',
-        danger: 'danger',
+        destructive: 'destructive',
         success: 'success',
         warning: 'warning',
     };

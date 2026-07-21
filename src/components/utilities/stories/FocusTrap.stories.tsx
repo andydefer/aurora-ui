@@ -41,7 +41,7 @@ const meta: Meta<typeof FocusTrap> = {
         },
         indicatorColor: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur de l\'indicateur',
         },
         paused: {

@@ -15,7 +15,7 @@ const meta: Meta<typeof Blockquote> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         showIcon: { control: 'boolean' },
         compact: { control: 'boolean' },
@@ -114,7 +114,7 @@ export const DangerColor: Story = {
         children: "Le design c'est la fonction première.",
         author: 'Philippe Starck',
         authorAvatar: 'https://picsum.photos/seed/philippe/100/100',
-        color: 'danger',
+        color: 'destructive',
         showIcon: true,
     },
 };

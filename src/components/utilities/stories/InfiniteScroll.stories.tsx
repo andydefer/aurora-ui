@@ -52,7 +52,7 @@ const meta: Meta<typeof InfiniteScroll> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         loadMoreText: {
@@ -158,7 +158,7 @@ interface InfiniteScrollDemoProps {
     mode?: 'auto' | 'manual';
     threshold?: number;
     showProgress?: boolean;
-    color?: 'primary' | 'secondary' | 'muted' | 'danger' | 'success' | 'warning';
+    color?: 'primary' | 'secondary' | 'muted' | 'destructive' | 'success' | 'warning';
     loadMoreText?: string;
     endMessageText?: string;
     initialItems?: number;
@@ -583,8 +583,8 @@ export const WithCustomLoader: Story = {
 
 export const DifferentColors: Story = {
     render: () => {
-        const colors: Array<'primary' | 'secondary' | 'success' | 'warning' | 'danger'> = [
-            'primary', 'secondary', 'success', 'warning', 'danger'
+        const colors: Array<'primary' | 'secondary' | 'success' | 'warning' | 'destructive'> = [
+            'primary', 'secondary', 'success', 'warning', 'destructive'
         ];
 
         return (

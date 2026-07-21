@@ -32,7 +32,7 @@ export function Blockquote({
         primary: 'border-primary/30 text-foreground',
         secondary: 'border-secondary/30 text-secondary',
         muted: 'border-muted/30 text-muted-foreground',
-        danger: 'border-danger/30 text-danger',
+        destructive: 'border-destructive/30 text-destructive',
         success: 'border-success/30 text-success',
         warning: 'border-warning/30 text-warning',
     };

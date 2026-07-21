@@ -1,3 +1,4 @@
+// src/components/feedback/ToastContainer.tsx
 import { ReactNode } from 'react';
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
@@ -5,18 +6,14 @@ import { ToastPosition } from './Toast';
 
 export interface ToastContainerProps extends LayoutBaseProps {
     position?: ToastPosition;
-    limit?: number;
-    autoClose?: boolean;
-    newestOnTop?: boolean;
     children?: ReactNode;
+    newestOnTop?: boolean;
 }
 
 export function ToastContainer({
     position = 'top-right',
-    limit = 5,
-    autoClose = true,
-    newestOnTop = true,
     children,
+    newestOnTop = true,
     className = '',
     style = {},
 }: ToastContainerProps) {

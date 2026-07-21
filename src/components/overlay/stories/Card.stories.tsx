@@ -57,7 +57,7 @@ const meta: Meta<typeof Card> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         radius: {
@@ -700,12 +700,12 @@ export const StatsCard: Story = {
             </Card>
 
             <Card variant="default" radius="lg" shadow="sm" className="text-center p-6">
-                <div className="flex items-center justify-center w-14 h-14 mx-auto rounded-full bg-danger/10 text-danger">
+                <div className="flex items-center justify-center w-14 h-14 mx-auto rounded-full bg-destructive/10 text-destructive">
                     <AlertCircle size={28} />
                 </div>
                 <Text variant="h3" className="font-bold mt-4">3</Text>
                 <Text variant="body" color="muted">Alertes critiques</Text>
-                <div className="flex items-center justify-center gap-1 mt-3 text-danger">
+                <div className="flex items-center justify-center gap-1 mt-3 text-destructive">
                     <span className="text-base font-medium">Urgent</span>
                 </div>
             </Card>

@@ -30,7 +30,7 @@ export function Label({
         <label htmlFor={htmlFor} className={classes} style={style}>
             {children}
             {required && (
-                <span className="ml-0.5 text-danger">*</span>
+                <span className="ml-0.5 text-destructive">*</span>
             )}
             {optional && (
                 <span className="ml-1 text-sm font-normal text-muted-foreground">

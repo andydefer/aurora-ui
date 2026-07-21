@@ -1,7 +1,8 @@
+// src/components/feedback/CircularProgress.tsx
 import { clsx } from '../../utils/clsx';
 import { LayoutBaseProps } from '../../types';
 
-export type CircularProgressVariant = 'primary' | 'success' | 'warning' | 'error';
+export type CircularProgressVariant = 'primary' | 'success' | 'warning' | 'destructive';
 
 export interface CircularProgressProps extends LayoutBaseProps {
     value?: number;
@@ -10,6 +11,7 @@ export interface CircularProgressProps extends LayoutBaseProps {
     variant?: CircularProgressVariant;
     label?: string;
     showValue?: boolean;
+    animate?: boolean;
 }
 
 export function CircularProgress({
@@ -19,6 +21,7 @@ export function CircularProgress({
     variant = 'primary',
     label,
     showValue = true,
+    animate = true,
     className = '',
     style = {},
 }: CircularProgressProps) {
@@ -31,7 +34,7 @@ export function CircularProgress({
         primary: 'stroke-primary',
         success: 'stroke-success',
         warning: 'stroke-warning',
-        error: 'stroke-error',
+        destructive: 'stroke-destructive',
     };
 
     const classes = clsx(
@@ -45,7 +48,7 @@ export function CircularProgress({
                 width={size}
                 height={size}
                 viewBox={`0 0 ${size} ${size}`}
-                className="transform -rotate-90"
+                className={clsx('transform -rotate-90', animate && 'transition-all duration-300')}
             >
                 <circle
                     cx={size / 2}
@@ -64,11 +67,13 @@ export function CircularProgress({
                     stroke="currentColor"
                     strokeWidth={thickness}
                     strokeLinecap="round"
-                    className={variantClasses[variant]}
+                    className={clsx(
+                        variantClasses[variant],
+                        animate && 'transition-all duration-500 ease-in-out'
+                    )}
                     style={{
                         strokeDasharray: circumference,
                         strokeDashoffset: offset,
-                        transition: 'stroke-dashoffset 0.3s ease',
                     }}
                 />
             </svg>

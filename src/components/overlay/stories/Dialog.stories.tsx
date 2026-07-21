@@ -20,7 +20,7 @@ const meta: Meta<typeof Dialog> = {
     argTypes: {
         type: {
             control: 'select',
-            options: ['default', 'info', 'success', 'warning', 'error', 'confirm', 'timeout'],
+            options: ['default', 'info', 'success', 'warning', 'destructive', 'confirm', 'timeout'],
             description: 'Type de dialogue',
         },
         size: {
@@ -167,14 +167,14 @@ export const AlertError: Story = {
         </DialogWithState>
     ),
     args: {
-        type: 'error',
+        type: 'destructive',
         title: 'Erreur',
         description: 'Une erreur inattendue s\'est produite. Veuillez réessayer.',
         confirmText: 'Réessayer',
         cancelText: 'Annuler',
         size: 'sm',
         showCancel: true,
-        confirmButtonColor: 'danger',
+        confirmButtonColor: 'destructive',
     },
 };
 
@@ -216,7 +216,7 @@ export const ConfirmDanger: Story = {
         size: 'sm',
         showCancel: false,
         showReject: true,
-        confirmButtonColor: 'danger',
+        confirmButtonColor: 'destructive',
     },
 };
 
@@ -367,7 +367,7 @@ export const AllTypes: Story = {
             { type: 'info', title: 'Information', description: 'Ceci est une information.', label: 'Info' },
             { type: 'success', title: 'Succès !', description: 'Action réussie !', label: 'Success' },
             { type: 'warning', title: 'Attention', description: 'Action potentiellement dangereuse.', label: 'Warning' },
-            { type: 'error', title: 'Erreur', description: 'Une erreur est survenue.', label: 'Error' },
+            { type: 'destructive', title: 'Erreur', description: 'Une erreur est survenue.', label: 'Error' },
             { type: 'confirm', title: 'Confirmation', description: 'Confirmez ou rejetez.', label: 'Confirm' },
             { type: 'timeout', title: 'Timeout', description: 'Ce dialogue expire dans 5s.', label: 'Timeout' },
         ];

@@ -54,7 +54,7 @@ const meta: Meta<typeof Icon> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         stroke: {
             control: 'number',
@@ -105,7 +105,7 @@ export const Colors: Story = {
             <Icon icon={Heart} color="primary" />
             <Icon icon={Heart} color="secondary" />
             <Icon icon={Heart} color="muted" />
-            <Icon icon={Heart} color="danger" />
+            <Icon icon={Heart} color="destructive" />
             <Icon icon={Heart} color="success" />
             <Icon icon={Heart} color="warning" />
         </Flex>
@@ -138,7 +138,7 @@ export const WithFill: Story = {
     render: () => (
         <Flex gap={4} align="center">
             <Icon icon={Heart} fill="none" />
-            <Icon icon={Heart} fill="#ef4444" color="danger" />
+            <Icon icon={Heart} fill="#ef4444" color="destructive" />
             <Icon icon={Star} fill="#f59e0b" color="warning" />
             <Icon icon={Check} fill="#22c55e" color="success" />
         </Flex>
@@ -159,7 +159,7 @@ export const Pulse: Story = {
         icon: Bell,
         size: 'lg',
         pulse: true,
-        color: 'danger',
+        color: 'destructive',
     },
 };
 
@@ -203,7 +203,7 @@ export const CommonIcons: Story = {
             <Icon icon={Settings} size="lg" />
             <Icon icon={Bell} size="lg" />
             <Icon icon={Mail} size="lg" />
-            <Icon icon={Heart} size="lg" color="danger" />
+            <Icon icon={Heart} size="lg" color="destructive" />
             <Icon icon={Star} size="lg" color="warning" />
             <Icon icon={Search} size="lg" />
             <Icon icon={Camera} size="lg" />
@@ -227,12 +227,12 @@ export const Actions: Story = {
             <Icon icon={Download} size="lg" />
             <Icon icon={Upload} size="lg" />
             <Icon icon={Share2} size="lg" />
-            <Icon icon={Trash2} size="lg" color="danger" />
+            <Icon icon={Trash2} size="lg" color="destructive" />
             <Icon icon={Pencil} size="lg" />
             <Icon icon={Plus} size="lg" color="success" />
-            <Icon icon={Minus} size="lg" color="danger" />
+            <Icon icon={Minus} size="lg" color="destructive" />
             <Icon icon={Check} size="lg" color="success" />
-            <Icon icon={X} size="lg" color="danger" />
+            <Icon icon={X} size="lg" color="destructive" />
         </Flex>
     ),
 };
@@ -240,11 +240,11 @@ export const Actions: Story = {
 export const StatusIcons: Story = {
     render: () => (
         <Flex gap={4} align="center">
-            <Icon icon={AlertCircle} size="lg" color="danger" />
+            <Icon icon={AlertCircle} size="lg" color="destructive" />
             <Icon icon={Info} size="lg" color="primary" />
             <Icon icon={HelpCircle} size="lg" color="muted" />
             <Icon icon={Check} size="lg" color="success" />
-            <Icon icon={X} size="lg" color="danger" />
+            <Icon icon={X} size="lg" color="destructive" />
         </Flex>
     ),
 };
@@ -263,7 +263,7 @@ export const CombinedAnimations: Story = {
         <Flex gap={6} align="center" className="p-8 bg-muted/10 rounded-xl">
             <Icon icon={Sparkles} size="xl" color="warning" spin pulse />
             <Icon icon={Zap} size="xl" color="warning" bounce />
-            <Icon icon={Flame} size="xl" color="danger" pulse />
+            <Icon icon={Flame} size="xl" color="destructive" pulse />
             <Icon icon={Crown} size="xl" color="primary" bounce />
         </Flex>
     ),

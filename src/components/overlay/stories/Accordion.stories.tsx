@@ -31,7 +31,7 @@ const meta: Meta<typeof Accordion> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur d\'accentuation',
         },
         multiple: {
@@ -268,7 +268,7 @@ export const WithCustomExpandIcon: Story = {
         showIcon: true,
         iconType: 'chevron',
         expandIcon: <ChevronDown size={24} className="text-success" />,
-        collapseIcon: <ChevronUp size={24} className="text-danger" />,
+        collapseIcon: <ChevronUp size={24} className="text-destructive" />,
         defaultOpen: ['1'],
     },
     parameters: {
@@ -376,7 +376,7 @@ export const DangerColor: Story = {
         items: defaultItems,
         variant: 'default',
         size: 'md',
-        color: 'danger',
+        color: 'destructive',
         multiple: true,
         animate: true,
         showIcon: true,

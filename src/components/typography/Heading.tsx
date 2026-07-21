@@ -33,7 +33,7 @@ export function Heading({
         primary: 'text-primary',
         secondary: 'text-secondary',
         muted: 'text-muted',
-        danger: 'text-danger',
+        destructive: 'text-destructive',
         success: 'text-success',
         warning: 'text-warning',
     };

@@ -16,7 +16,7 @@ export interface NavigationProps extends LayoutBaseProps {
     ariaLabel?: string;
     items?: NavigationItem[];
     collapsible?: boolean;
-    activeColor?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
+    activeColor?: 'primary' | 'secondary' | 'destructive' | 'success' | 'warning';
     gap?: Size;
     as?: React.ElementType;
     highlight?: boolean;
@@ -56,7 +56,7 @@ export function Navigation({
     const activeColorClasses: Record<string, string> = {
         primary: 'text-primary hover:text-primary/80 bg-primary/10',
         secondary: 'text-secondary hover:text-secondary/80 bg-secondary/10',
-        danger: 'text-danger hover:text-danger/80 bg-danger/10',
+        destructive: 'text-destructive hover:text-destructive/80 bg-destructive/10',
         success: 'text-success hover:text-success/80 bg-success/10',
         warning: 'text-warning hover:text-warning/80 bg-warning/10',
     };

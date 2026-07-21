@@ -15,7 +15,7 @@ const meta: Meta<typeof Heading> = {
         },
         color: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
         },
         align: {
             control: 'select',
@@ -55,7 +55,7 @@ export const H3: Story = {
 export const WithColor: Story = {
     args: {
         level: 2,
-        color: 'danger',
+        color: 'destructive',
         children: 'Danger heading',
     },
 };

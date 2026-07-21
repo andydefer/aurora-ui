@@ -7,7 +7,7 @@ export interface ProgressProps extends LayoutBaseProps {
     label?: string;
     showValue?: boolean;
     animated?: boolean;
-    variant?: 'default' | 'success' | 'danger' | 'warning';
+    variant?: 'default' | 'success' | 'destructive' | 'warning';
 }
 
 export function Progress({
@@ -25,7 +25,7 @@ export function Progress({
     const variantClasses = {
         default: 'bg-primary',
         success: 'bg-success',
-        danger: 'bg-danger',
+        destructive: 'bg-destructive',
         warning: 'bg-warning',
     };
 

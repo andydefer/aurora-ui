@@ -272,7 +272,7 @@ export const RichContent: Story = {
                     <Badge variant="primary">Design</Badge>
                     <Badge variant="success">UI</Badge>
                     <Badge variant="warning">UX</Badge>
-                    <Badge variant="error">Beta</Badge>
+                    <Badge variant="destructive">Beta</Badge>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 bg-primary/5 rounded-lg border border-primary/10 text-center">

@@ -7,7 +7,7 @@ export interface DropdownItem {
     value?: string;
     icon?: React.ReactNode;
     disabled?: boolean;
-    danger?: boolean;
+    destructive?: boolean;
     divider?: boolean;
 }
 
@@ -120,8 +120,8 @@ export function Dropdown({
                                         className={clsx(
                                             'flex items-center gap-2 w-full px-4 text-left transition-colors duration-150',
                                             sizeClasses[size],
-                                            item.danger
-                                                ? 'text-danger hover:bg-danger/10'
+                                            item.destructive
+                                                ? 'text-destructive hover:bg-destructive/10'
                                                 : 'text-foreground hover:bg-muted/20',
                                             item.disabled && 'opacity-50 cursor-not-allowed'
                                         )}

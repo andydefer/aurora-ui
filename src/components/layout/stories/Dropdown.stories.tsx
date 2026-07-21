@@ -36,7 +36,7 @@ const defaultItems: DropdownItem[] = [
     { label: 'Paramètres', value: 'settings', icon: <Settings size={16} /> },
     { label: 'Aide', value: 'help', icon: <HelpCircle size={16} /> },
     { divider: true },
-    { label: 'Déconnexion', value: 'logout', icon: <LogOut size={16} />, danger: true },
+    { label: 'Déconnexion', value: 'logout', icon: <LogOut size={16} />, destructive: true },
 ];
 
 export const Default: Story = {
@@ -158,7 +158,7 @@ export const WithDisabledItems: Story = {
             { label: 'Paramètres', value: 'settings', icon: <Settings size={16} />, disabled: true },
             { label: 'Aide', value: 'help', icon: <HelpCircle size={16} /> },
             { divider: true },
-            { label: 'Déconnexion', value: 'logout', icon: <LogOut size={16} />, danger: true },
+            { label: 'Déconnexion', value: 'logout', icon: <LogOut size={16} />, destructive: true },
         ] as DropdownItem[],
         placement: 'bottom-left',
     },

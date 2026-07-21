@@ -45,7 +45,7 @@ export function Text({
         primary: 'text-foreground',
         secondary: 'text-secondary',
         muted: 'text-muted-foreground',
-        danger: 'text-danger',
+        destructive: 'text-destructive',
         success: 'text-success',
         warning: 'text-warning',
     };

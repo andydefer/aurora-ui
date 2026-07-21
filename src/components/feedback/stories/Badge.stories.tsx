@@ -20,7 +20,7 @@ const meta: Meta<typeof Badge> = {
     argTypes: {
         variant: {
             control: 'select',
-            options: ['primary', 'secondary', 'success', 'warning', 'error', 'info', 'muted', 'outline', 'ghost'],
+            options: ['primary', 'secondary', 'success', 'warning', 'destructive', 'info', 'muted', 'outline', 'ghost'],
             description: 'Style visuel du badge',
         },
         size: {
@@ -67,7 +67,7 @@ export const AllVariants: Story = {
             <Badge variant="secondary">Secondary</Badge>
             <Badge variant="success">Success</Badge>
             <Badge variant="warning">Warning</Badge>
-            <Badge variant="error">Error</Badge>
+            <Badge variant="destructive">Error</Badge>
             <Badge variant="info">Info</Badge>
             <Badge variant="muted">Muted</Badge>
             <Badge variant="outline">Outline</Badge>
@@ -111,7 +111,7 @@ export const WithCount: Story = {
             <Badge count={5}>Notifications</Badge>
             <Badge count={12} variant="success">Messages</Badge>
             <Badge count={3} variant="warning">Alertes</Badge>
-            <Badge count={99} max={99} variant="error">99+</Badge>
+            <Badge count={99} max={99} variant="destructive">99+</Badge>
         </div>
     ),
     parameters: {
@@ -210,7 +210,7 @@ export const DotOnly: Story = {
                     <Star size={20} />
                 </Button>
             </Badge>
-            <Badge dot variant="error">
+            <Badge dot variant="destructive">
                 <Button variant="outline" size="lg">
                     <X size={20} />
                 </Button>
@@ -237,7 +237,7 @@ export const WithIcon: Story = {
             <Badge variant="success" icon={<Check size={12} />} iconPosition="left">
                 Validé
             </Badge>
-            <Badge variant="error" icon={<X size={12} />} iconPosition="right">
+            <Badge variant="destructive" icon={<X size={12} />} iconPosition="right">
                 Erreur
             </Badge>
             <Badge variant="warning" icon={<Star size={12} />}>
@@ -268,7 +268,7 @@ export const Removable: Story = {
             <Badge variant="warning" removable onRemove={() => alert('Supprimé !')}>
                 En cours
             </Badge>
-            <Badge variant="error" removable onRemove={() => alert('Supprimé !')}>
+            <Badge variant="destructive" removable onRemove={() => alert('Supprimé !')}>
                 Annulé
             </Badge>
         </div>
@@ -290,7 +290,7 @@ export const Rounded: Story = {
             <Badge rounded variant="primary">Primary</Badge>
             <Badge rounded variant="success">Success</Badge>
             <Badge rounded variant="warning">Warning</Badge>
-            <Badge rounded variant="error">Error</Badge>
+            <Badge rounded variant="destructive">Error</Badge>
             <Badge rounded variant="info">Info</Badge>
             <Badge rounded variant="outline">Outline</Badge>
         </div>
@@ -313,11 +313,11 @@ export const StatusBadges: Story = {
                 <span className="text-sm font-medium w-20">Status :</span>
                 <Badge dot variant="success">En ligne</Badge>
                 <Badge dot variant="warning">Absent</Badge>
-                <Badge dot variant="error">Hors ligne</Badge>
+                <Badge dot variant="destructive">Hors ligne</Badge>
             </div>
             <div className="flex items-center gap-4">
                 <span className="text-sm font-medium w-20">Priorité :</span>
-                <Badge variant="error">Haute</Badge>
+                <Badge variant="destructive">Haute</Badge>
                 <Badge variant="warning">Moyenne</Badge>
                 <Badge variant="info">Basse</Badge>
             </div>
@@ -387,7 +387,7 @@ export const AllVariantsComparison: Story = {
                     <Badge variant="secondary">Secondary</Badge>
                     <Badge variant="success">Success</Badge>
                     <Badge variant="warning">Warning</Badge>
-                    <Badge variant="error">Error</Badge>
+                    <Badge variant="destructive">Error</Badge>
                     <Badge variant="info">Info</Badge>
                     <Badge variant="muted">Muted</Badge>
                     <Badge variant="outline">Outline</Badge>
@@ -411,7 +411,7 @@ export const AllVariantsComparison: Story = {
                     <Badge rounded variant="primary">Primary</Badge>
                     <Badge rounded variant="success">Success</Badge>
                     <Badge rounded variant="warning">Warning</Badge>
-                    <Badge rounded variant="error">Error</Badge>
+                    <Badge rounded variant="destructive">Error</Badge>
                 </div>
             </div>
 
@@ -420,7 +420,7 @@ export const AllVariantsComparison: Story = {
                 <div className="flex flex-wrap gap-3">
                     <Badge variant="primary" icon={<Bell size={12} />}>Notifications</Badge>
                     <Badge variant="success" icon={<Check size={12} />}>Validé</Badge>
-                    <Badge variant="error" icon={<X size={12} />}>Erreur</Badge>
+                    <Badge variant="destructive" icon={<X size={12} />}>Erreur</Badge>
                 </div>
             </div>
 

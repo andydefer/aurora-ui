@@ -35,7 +35,7 @@ const meta: Meta<typeof ScrollLock> = {
         },
         indicatorColor: {
             control: 'select',
-            options: ['primary', 'secondary', 'muted', 'danger', 'success', 'warning'],
+            options: ['primary', 'secondary', 'muted', 'destructive', 'success', 'warning'],
             description: 'Couleur de l\'indicateur',
         },
         preserveScrollPosition: {
@@ -64,7 +64,7 @@ const ScrollLockDemo = ({
                     <div className="flex items-center gap-3">
                         <div className={clsx(
                             'w-3 h-3 rounded-full transition-all duration-300',
-                            isLocked ? 'bg-danger animate-pulse' : 'bg-success'
+                            isLocked ? 'bg-destructive animate-pulse' : 'bg-success'
                         )} />
                         <div>
                             <Text variant="h6" className="font-bold">
@@ -79,11 +79,11 @@ const ScrollLockDemo = ({
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Badge variant={isLocked ? 'danger' : 'success'} size="md">
+                        <Badge variant={isLocked ? 'destructive' : 'success'} size="md">
                             {isLocked ? 'Verrouillé' : 'Déverrouillé'}
                         </Badge>
                         <Button
-                            variant={isLocked ? 'danger' : 'primary'}
+                            variant={isLocked ? 'destructive' : 'primary'}
                             size="md"
                             icon={isLocked ? <Unlock size={16} /> : <Lock size={16} />}
                             onClick={() => setIsLocked(!isLocked)}
@@ -104,13 +104,13 @@ const ScrollLockDemo = ({
                         shadow={isLocked ? 'lg' : 'sm'}
                         className={clsx(
                             'p-6 transition-all duration-300',
-                            isLocked && 'ring-2 ring-danger/20 border-danger/20'
+                            isLocked && 'ring-2 ring-destructive/20 border-destructive/20'
                         )}
                     >
                         <div className="flex items-start gap-4">
                             <div className={clsx(
                                 'p-3 rounded-full transition-all duration-300',
-                                isLocked ? 'bg-danger/10 text-danger' : 'bg-primary/10 text-primary'
+                                isLocked ? 'bg-destructive/10 text-destructive' : 'bg-primary/10 text-primary'
                             )}>
                                 {isLocked ? <Lock size={24} /> : <Unlock size={24} />}
                             </div>
@@ -128,7 +128,7 @@ const ScrollLockDemo = ({
                                     <div className="flex items-center gap-2">
                                         <div className={clsx(
                                             'w-2 h-2 rounded-full transition-all duration-300',
-                                            isLocked ? 'bg-danger' : 'bg-success'
+                                            isLocked ? 'bg-destructive' : 'bg-success'
                                         )} />
                                         <Text variant="small" className="font-mono">
                                             Status: {isLocked ? '🔒 VERROUILLÉ' : '🔓 DÉVERROUILLÉ'}
@@ -235,7 +235,7 @@ export const WithCustomIndicator: Story = {
         <ScrollLockDemo
             showIndicator={true}
             indicatorText="⛔ Arrêtez de défiler !"
-            indicatorColor="danger"
+            indicatorColor="destructive"
         />
     ),
     parameters: {
@@ -252,13 +252,13 @@ export const WithDangerColor: Story = {
         <ScrollLockDemo
             showIndicator={true}
             indicatorText="🚫 Défilement bloqué"
-            indicatorColor="danger"
+            indicatorColor="destructive"
         />
     ),
     parameters: {
         docs: {
             description: {
-                story: 'Verrouillage avec couleur danger.',
+                story: 'Verrouillage avec couleur destructive.',
             },
         },
     },
@@ -354,7 +354,7 @@ export const InModal: Story = {
                                         Le défilement est verrouillé tant que la modal est ouverte.
                                     </Text>
                                     <div className="mt-2 flex items-center gap-2">
-                                        <Badge variant="danger" dot size="sm">
+                                        <Badge variant="destructive" dot size="sm">
                                             Verrouillé
                                         </Badge>
                                         <Text variant="caption" color="muted">
@@ -400,8 +400,8 @@ export const InModal: Story = {
 
 export const AllColors: Story = {
     render: () => {
-        const colors: Array<'primary' | 'secondary' | 'success' | 'warning' | 'danger'> = [
-            'primary', 'secondary', 'success', 'warning', 'danger'
+        const colors: Array<'primary' | 'secondary' | 'success' | 'warning' | 'destructive'> = [
+            'primary', 'secondary', 'success', 'warning', 'destructive'
         ];
 
         return (
