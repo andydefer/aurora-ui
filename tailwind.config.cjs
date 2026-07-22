@@ -2,6 +2,7 @@
 module.exports = {
     content: [
         "./src/**/*.{js,jsx,ts,tsx}",
+        "./src/**/**.{js,jsx,ts,tsx}",
         "./dist/**/*.{js,mjs}",
         "./.storybook/**/*.{js,ts,jsx,tsx}",
     ],

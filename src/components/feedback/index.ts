@@ -6,6 +6,8 @@ export { Chip } from './Chip';
 export type { ChipProps, ChipVariant } from './Chip';
 export { CircularProgress } from './CircularProgress';
 export type { CircularProgressProps, CircularProgressVariant } from './CircularProgress';
+export { NotificationBadge } from './NotificationBadge'
+export type { NotificationBadgeProps } from './NotificationBadge'
 export { Popover } from './Popover';
 export type { PopoverProps, PopoverPosition, PopoverTrigger } from './Popover';
 export { ProgressBar } from './ProgressBar';
