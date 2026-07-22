@@ -21,9 +21,9 @@
     },
     "files": [
         "dist",
+        "dist/fonts",
         "README.md",
-        "LICENSE",
-        "src/css/fonts"
+        "LICENSE"
     ],
     "scripts": {
         "build": "npm run build:css && npm run build:fonts && tsup src/index.ts --format esm,cjs --dts --clean --external react,react-dom && cp src/css/styles.css dist/styles.css",
