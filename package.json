@@ -88,14 +88,14 @@
     "author": {
         "name": "Andy Defer",
         "email": "andy@defer.dev",
-        "url": "https://github.com/andy-defer"
+        "url": "https://github.com/andydefer"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/andy-defer/aurora-ui.git"
+        "url": "git+https://github.com/andydefer/aurora-ui.git"
     },
     "bugs": {
-        "url": "https://github.com/andy-defer/aurora-ui/issues"
+        "url": "https://github.com/andydefer/aurora-ui/issues"
     },
-    "homepage": "https://github.com/andy-defer/aurora-ui#readme"
+    "homepage": "https://github.com/andydefer/aurora-ui#readme"
 }

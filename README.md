@@ -6,7 +6,7 @@
 
 [![npm version](https://img.shields.io/npm/v/aurora-ui.svg)](https://www.npmjs.com/package/aurora-ui)
 [![npm downloads](https://img.shields.io/npm/dm/aurora-ui.svg)](https://www.npmjs.com/package/aurora-ui)
-[![license](https://img.shields.io/npm/l/aurora-ui.svg)](https://github.com/andy-defer/aurora-ui/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/aurora-ui.svg)](https://github.com/andydefer/aurora-ui/blob/main/LICENSE)
 [![React](https://img.shields.io/badge/React-18+-61dafb.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0+-38bdf8.svg)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6.svg)](https://www.typescriptlang.org/)
@@ -634,7 +634,7 @@ function Dashboard() {
 ### Cloner le projet
 
 ```bash
-git clone https://github.com/andy-defer/aurora-ui.git
+git clone https://github.com/andydefer/aurora-ui.git
 cd aurora-ui
 npm install
 ```
@@ -693,11 +693,11 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 
 ## 📄 License
 
-MIT © [Andy Defer](https://github.com/andy-defer)
+MIT © [Andy Defer](https://github.com/andydefer)
 
 ---
 
 
 **Illuminez vos interfaces avec Aurora UI** ✨
 
-[Report Bug](https://github.com/andy-defer/aurora-ui/issues) · [Request Feature](https://github.com/andy-defer/aurora-ui/issues) · [Documentation](https://aurora-ui.andy-defer.dev)
+[Report Bug](https://github.com/andydefer/aurora-ui/issues) · [Request Feature](https://github.com/andydefer/aurora-ui/issues) · [Documentation](https://aurora-ui.andy-defer.dev)
